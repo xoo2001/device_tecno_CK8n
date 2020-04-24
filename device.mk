@@ -226,7 +226,8 @@ PRODUCT_COPY_FILES += \
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResOverlayX6739 \
-    TetheringConfigOverlayX6739
+    TetheringConfigOverlayX6739 \
+    WifiOverlayX6739
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
