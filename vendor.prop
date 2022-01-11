@@ -350,6 +350,7 @@ ro.vendor.keymaster_version=4.1
 
 # USB
 ro.vendor.usb.kpoc_adb=0
+persist.vendor.usb.config=mtp,adb
 
 # VPU
 ro.vendor.mtk_mvpu_security_support=0
