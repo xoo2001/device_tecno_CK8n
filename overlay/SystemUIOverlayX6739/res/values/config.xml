@@ -25,6 +25,9 @@
     <!-- If not zero, limits the internal screen recorder's framerate to the set value. -->
     <integer name="config_screenRecorderMaxFramerate">120</integer>
 
-<!-- Bottom margin size when fingerprint in display is active -->
+    <!-- Bottom margin size when fingerprint in display is active -->
     <dimen name="keyguard_indication_margin_bottom">15dp</dimen>
+
+    <!-- The number of rows in the QuickSettings -->
+    <integer name="quick_settings_max_rows">5</integer>
 </resources>
