@@ -225,6 +225,7 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlayX6739 \
     FrameworksResOverlayX6739 \
     TelephonyOverlayX6739 \
     TetheringConfigOverlayX6739 \
