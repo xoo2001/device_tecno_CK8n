@@ -337,14 +337,12 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek \
-    android.hardware.power@1.3.vendor
-
-PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
 
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/perf,$(TARGET_COPY_OUT_VENDOR)/etc)
+# Power | Dummy mtkperf lib
+PRODUCT_PACKAGES += \
+    libmtkperf_client_vendor \
+    libmtkperf_client
 
 # PowerOffAlarm
 PRODUCT_PACKAGES += \
