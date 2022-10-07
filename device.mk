@@ -337,7 +337,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3.vendor
+    android.hardware.power-service.lineage-libperfmgr
 
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub
@@ -426,6 +426,7 @@ PRODUCT_SHIPPING_API_LEVEL := 33
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/mediatek/libmtkperf_client \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/mediatek \
