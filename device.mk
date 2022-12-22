@@ -372,6 +372,7 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.recovery.mt6893.rc \
     init.sensor_2_0.rc \
+    init.target.rc \
     init.stnfc.rc \
     ueventd.mtk.rc
 
