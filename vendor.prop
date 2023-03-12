@@ -322,6 +322,11 @@ ro.vendor.usb.kpoc_adb=0
 # VPU
 ro.vendor.mtk_mvpu_security_support=0
 
+# Vibrator
+ro.vendor.vibrator.hal.click.duration=70
+ro.vendor.vibrator.hal.tick.duration=60
+ro.vendor.vibrator.hal.texture_tick.duration=40
+
 # WiFi
 persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.dynamic.dump=0
