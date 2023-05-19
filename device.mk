@@ -122,8 +122,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0.vendor \
     android.hardware.graphics.mapper@4.0.vendor \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service
+    android.hardware.memtrack-service.mediatek-mali
 
 PRODUCT_PACKAGES += \
     libdrm.vendor \
