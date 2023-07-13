@@ -217,6 +217,7 @@ ro.vendor.smvr.p2batch.vga=8
 ro.vendor.smvr.p2batch.hd=4
 ro.vendor.mtk_blulight_def_support=1
 persist.vendor.sys.mtkaal.function=0
+debug.sdm.support_writeback=0
 
 # IMS
 persist.vendor.ims_support=1
