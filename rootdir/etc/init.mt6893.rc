@@ -87,11 +87,6 @@ on charger
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
 
-#MD: fajiang.tan delete CHJHBYY-8 for cancel cache partition under charger mode, 20210518, start
-    #exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
-    #mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
-#MD: fajiang.tan delete CHJHBYY-8 for cancel cache partition under charger mode, 20210518, end
-
     chmod 0660 /dev/spm
     chown system system /dev/spm
     chmod 0666 /dev/kmsg
@@ -119,10 +114,6 @@ on charger
 
     start fuelgauged
     start fuelgauged_nvram
-
-    chown system system /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
 
     start vendor.light-default
 
@@ -1094,6 +1085,16 @@ on boot
     chown system radio /dev/ttyGS1
 #Power Manager
     write /sys/power/pm_freeze_timeout 2000
+
+service charger /system/bin/charger
+    class charger
+    user system
+    group system graphics wakelock input
+    capabilities SYS_BOOT
+    file /dev/kmsg w
+    file /sys/fs/pstore/console-ramoops-0 r
+    file /sys/fs/pstore/console-ramoops r
+    file /proc/last_kmsg r
 
 # end boot time fs tune
 on property:sys.boot_completed=1

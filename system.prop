@@ -23,6 +23,9 @@ Build.BRAND=MTK
 ro.camera.sound.forced=0
 vendor.camera.tran.nums=1
 
+# Charger
+ro.charger.enable_suspend=true
+
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
 
