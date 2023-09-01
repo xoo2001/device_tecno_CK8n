@@ -3,3 +3,4 @@ allow vendor_init proc:file write;
 
 set_prop(vendor_init, vendor_mtk_camera_prop)
 get_prop(vendor_init, vts_status_prop)
+rw_dir_file(vendor_init, sysfs_leds)
