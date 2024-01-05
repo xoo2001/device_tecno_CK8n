@@ -41,6 +41,25 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)-kernel/kernel:kernel
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt6893 \
+    init_conninfra.rc \
+    init.cgroup.rc \
+    init.connectivity.common.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6893.rc \
+    init.mt6893.usb.rc \
+    init.project.rc \
+    init.recovery.mt6893.rc \
+    init.sensor_2_0.rc \
+    init.stnfc.rc \
+    ueventd.mtk.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6893:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6893
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
