@@ -124,6 +124,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
+# SEPolicy
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
+
 # Vendor SPL
 VENDOR_SECURITY_PATCH := 2023-12-01
 
