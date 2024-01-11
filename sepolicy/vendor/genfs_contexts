@@ -1,3 +1,6 @@
+# Battery
+genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply/usb_switch                         u:object_r:sysfs_battery:s0
+
 # Devices
 genfscon sysfs /devices/platform/11270000.ufshci/host0/target0:0:0/0:0:0:0/block/sda/queue          u:object_r:sysfs_devices_block:s0
 genfscon sysfs /devices/platform/11270000.ufshci/host0/target0:0:0/0:0:0:0/block/sdb/queue          u:object_r:sysfs_devices_block:s0
