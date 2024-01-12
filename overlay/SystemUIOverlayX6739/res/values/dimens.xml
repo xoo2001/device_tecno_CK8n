@@ -30,4 +30,8 @@
     <dimen name="rounded_corner_content_padding">10dp</dimen>
     <dimen name="status_bar_padding_end">5dp</dimen>
     <dimen name="status_bar_padding_start">16dp</dimen>
+
+    <!-- Microns/ums (1000 um = 1mm) per pixel for the given device. If unspecified, UI that
+         relies on this value will not be sized correctly. -->
+    <item format="float" name="pixel_pitch" type="dimen">52.92</item>
 </resources>
