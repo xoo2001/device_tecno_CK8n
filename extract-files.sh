@@ -65,6 +65,11 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v31.so" "${2}"
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v31.so" "${2}"
             ;;
+        vendor/lib/hw/audio.primary.mt6893.so)
+            ;&
+        vendor/lib64/hw/audio.primary.mt6893.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v31.so" "${2}"
+            ;;
     esac
 }
 
