@@ -3,3 +3,6 @@ vendor.transsion.hardware.trancam.trancamserver::ITrancamserver                 
 
 # Google
 vendor.google.wireless_charger::IWirelessCharger                                    u:object_r:hal_wlc_hwservice:s0
+
+# Wi-Fi
+vendor.transsion.hardware.wifi.hostapd::IHostapd                                    u:object_r:hal_wifi_hostapd_hwservice:s0
