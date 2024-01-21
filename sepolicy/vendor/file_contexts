@@ -4,5 +4,8 @@
 /data/vendor/camera_watermark(/.*)?                                                     u:object_r:vendor_watermark_data_file:s0
 /data/vendor/multicam(/.*)?                                                             u:object_r:transsion_camera_data_file:s0
 
+# Extcon
+/sys/devices/platform/extcon_usb/extcon/extcon0/cable.1/state                           u:object_r:sysfs_OTG_STATE_file:s0
+
 # Tranfs
 /dev/block/sdc62                                                                        u:object_r:tranfs_block_device:s0
