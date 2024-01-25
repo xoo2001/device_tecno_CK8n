@@ -132,3 +132,5 @@ system_ext /system_ext erofs ro wait,slotselect,avb,logical,first_stage_mount
 
 
 /dev/block/by-name/tkv /tkv emmc defaults defaults
+
+/dev/block/zram0                     none                      swap     defaults             zramsize=55%
