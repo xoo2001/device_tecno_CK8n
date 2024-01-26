@@ -1,0 +1,3 @@
+# Gesture
+type proc_gesture_function, fs_type, proc_type, sysfs_type;
+type proc_main_gesture_function, fs_type, proc_type, sysfs_type;

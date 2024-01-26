@@ -1,3 +1,7 @@
+# Gesture
+genfscon proc /gesture_function                                                                     u:object_r:proc_gesture_function:s0
+genfscon proc /main_gesture_function                                                                u:object_r:proc_main_gesture_function:s0
+
 # Label wakeup nodes
 genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-0066/wakeup                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11d03000.i2c7/i2c-7/7-0008/wakeup                                  u:object_r:sysfs_wakeup:s0
