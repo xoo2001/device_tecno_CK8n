@@ -4,3 +4,6 @@ ro.mtk_cam_stereo_camera_support            u:object_r:vendor_mtk_camera_prop:s0
 
 # Key manager
 ro.mtk_key_manager_support                  u:object_r:vendor_mtk_default_prop:s0
+
+# NVRAM
+vendor.service.nvram_restore                u:object_r:vendor_mtk_service_nvram_restore_prop:s0

@@ -1,0 +1,2 @@
+# NVRAM
+vendor_restricted_prop(vendor_mtk_service_nvram_restore_prop)
