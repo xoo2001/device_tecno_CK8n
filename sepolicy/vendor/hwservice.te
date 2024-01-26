@@ -1,0 +1,2 @@
+# Camera
+type hal_trancamserver_hwservice, hwservice_manager_type;

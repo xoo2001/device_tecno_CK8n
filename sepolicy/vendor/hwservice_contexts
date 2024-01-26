@@ -1,0 +1,2 @@
+# Camera
+vendor.transsion.hardware.trancam.trancamserver::ITrancamserver                     u:object_r:hal_trancamserver_hwservice:s0
