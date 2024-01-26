@@ -1,3 +1,6 @@
+# Audio
+ro.vendor.qti.va_aosp.support               u:object_r:vendor_audio_prop:s0
+
 # Camera
 ro.mtk_cam_dualzoom_support                 u:object_r:vendor_mtk_camera_prop:s0
 ro.mtk_cam_stereo_camera_support            u:object_r:vendor_mtk_camera_prop:s0
