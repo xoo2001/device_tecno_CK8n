@@ -1,0 +1,2 @@
+# Tranfs
+/dev/block/sdc62                                                                        u:object_r:tranfs_block_device:s0
