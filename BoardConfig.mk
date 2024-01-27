@@ -109,6 +109,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
+# Vendor SPL
+VENDOR_SECURITY_PATCH := 2023-12-01
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
