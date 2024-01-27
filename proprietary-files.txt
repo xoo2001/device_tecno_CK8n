@@ -510,3 +510,10 @@ vendor/firmware/soc3_0_ram_wmmcu_1a_1_hdr.bin
 vendor/firmware/st21nfc_fw7.bin
 vendor/firmware/valhall-1691526.wa
 vendor/firmware/wifi.cfg
+
+# Fuelgauged
+vendor/bin/fuelgauged
+vendor/bin/fuelgauged_nvram
+vendor/etc/init/fuelgauged_init.rc
+vendor/etc/init/fuelgauged_nvram_init.rc
+vendor/lib/libfgauge_gm30.so
