@@ -101,6 +101,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Partitions - Metadata
 BOARD_USES_METADATA_PARTITION := true
 
+# Power
+TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
+
 # Platform
 TARGET_BOARD_PLATFORM := mt6893
 BOARD_HAS_MTK_HARDWARE := true

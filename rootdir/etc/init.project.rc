@@ -9,6 +9,10 @@ on init
     # force on usb
     # write /sys/class/udc/${sys.usb.controller}/device/cmode 3
 
+    # Set xiaomi touch permissions
+    chown system system /dev/xiaomi-touch
+    chmod 0660 /dev/xiaomi-touch
+
 on post-fs-data
 
 #Camera
