@@ -10,5 +10,8 @@
 # Extcon
 /sys/devices/platform/extcon_usb/extcon/extcon0/cable.1/state                           u:object_r:sysfs_OTG_STATE_file:s0
 
+# Trancam
+/(system\/vendor|vendor)/bin/hw/vendor.transsion.hardware.trancam.trancamserver@1.0-service     u:object_r:trancamserver_exec:s0
+
 # Tranfs
 /dev/block/sdc62                                                                        u:object_r:tranfs_block_device:s0
