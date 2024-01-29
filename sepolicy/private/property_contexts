@@ -1,2 +1,5 @@
+# Fingerprint
+gf.debug.                                   u:object_r:vendor_fingerprint_prop:s0
+
 # SVN
 ro.product.svn                              u:object_r:build_prop:s0
