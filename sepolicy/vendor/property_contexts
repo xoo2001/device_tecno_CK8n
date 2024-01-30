@@ -12,6 +12,9 @@ RUNTIME_OVERRIDE_OPENCL_MEM_TYPE            u:object_r:exported_default_prop:s0
 RUNTIME_OVERRIDE_LOG_LEVEL                  u:object_r:exported_default_prop:s0
 demo.                                       u:object_r:exported_default_prop:s0
 
+# Display
+ro.vendor.mtk_hdr_video_support             u:object_r:vendor_mtk_default_prop:s0
+
 # Fingerprint
 persist.vendor.goodix.dump_data             u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.sys.fp.goodix.spmt.flag      u:object_r:vendor_fingerprint_prop:s0
