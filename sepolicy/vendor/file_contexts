@@ -11,7 +11,7 @@
 /sys/devices/platform/extcon_usb/extcon/extcon0/cable.1/state                           u:object_r:sysfs_OTG_STATE_file:s0
 
 # Fingerprint
-/(system\/vendor|vendor)/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-mediatek    u:object_r:hal_fingerprint_default_exec:s0
+/(system\/vendor|vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-mediatek    u:object_r:hal_fingerprint_default_exec:s0
 /sys/kernel/tran_fp(/.*)?                                                                       u:object_r:sysfs_fp_name_path:s0
 /data/vendor/goodix/gf_data(/.*)?                                                               u:object_r:vendor_gf_data_file:s0
 
