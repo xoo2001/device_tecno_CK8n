@@ -277,6 +277,7 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Camera
+system_ext/lib64/libArcFilter.so
 vendor/bin/hw/camerahalserver
 vendor/bin/hw/vendor.transsion.hardware.trancam.trancamserver@1.0-service
 vendor/bin/jpegtool
@@ -865,6 +866,7 @@ vendor/lib64/libarcsoft_low_light_hdr.so
 vendor/lib64/libarcsoft_night_hawk.so
 vendor/lib64/libarcsoft_torch_portrait_night.so
 vendor/lib64/libc++_shared.so
+vendor/lib64/libcalculatesharpness.so
 vendor/lib64/libcam.afhal.so
 vendor/lib64/libcam.chdr.so
 vendor/lib64/libcam.feature_utils.so
