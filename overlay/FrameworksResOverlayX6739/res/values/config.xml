@@ -34,12 +34,18 @@
         <item>mobile_supl,3,0,2,60000,true</item>
         <item>mobile_dun,4,0,2,60000,true</item>
         <item>mobile_hipri,5,0,3,60000,true</item>
+        <item>ethernet,9,9,9,-1,true</item>
         <item>mobile_fota,10,0,2,60000,true</item>
-        <item>mobile_ims,11,0,2,60000,true</item>
+        <item>mobile_ims,11,0,-1,-1,true</item>
         <item>mobile_cbs,12,0,2,60000,true</item>
         <item>wifi_p2p,13,1,0,-1,true</item>
         <item>mobile_ia,14,0,2,-1,true</item>
         <item>mobile_emergency,15,0,2,-1,true</item>
+        <item>mobile_mcx,1001,0,3,60000,true</item>
+        <item>mobile_xcap,1002,0,3,60000,true</item>
+        <item>mobile_rcs,2001,0,3,60000,true</item>
+        <item>mobile_bip,2002,0,3,60000,true</item>
+        <item>mobile_vsim,2003,0,-1,60000,true</item>
     </string-array>
 
     <!-- An Array of "[ConnectivityManager connectionType],
@@ -47,6 +53,36 @@
     <string-array name="radioAttributes">
       <item>1,1</item>
       <item>0,1</item>
+    </string-array>
+
+    <!-- Configure tcp buffer sizes per network type in the form:
+         network-type:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
+         The network-type must be a valid DataConfigNetworkType value. If no value is found for the
+         network-type in use, config_tcp_buffers will be used instead.
+    -->
+    <string-array name="config_network_type_tcp_buffers">
+        <item>GPRS:4092,8760,48000,4096,8760,48000</item>
+        <item>EDGE:4093,26280,70800,4096,16384,70800</item>
+        <item>UMTS:58254,349525,1048576,58254,349525,1048576</item>
+        <item>CDMA:4094,87380,262144,4096,16384,262144</item>
+        <item>1xRTT:16384,32768,131072,4096,16384,102400</item>
+        <item>EvDo_0:4094,87380,262144,4096,16384,262144</item>
+        <item>EvDo_A:4094,87380,262144,4096,16384,262144</item>
+        <item>HSDPA:61167,367002,1101005,8738,52429,262114</item>
+        <item>HSUPA:40778,244668,734003,16777,100663,301990</item>
+        <item>HSPA:40778,244668,734003,16777,100663,301990</item>
+        <item>EvDo_B:4094,87380,262144,4096,16384,262144</item>
+        <item>eHRPD:131072,262144,1048576,4096,16384,524288</item>
+        <item>iDEN:4094,87380,262144,4096,16384,262144</item>
+        <item>LTE:2097152,4194304,8388608,262144,524288,2097152</item>
+        <item>HSPA+:122334,734003,2202010,32040,192239,576717</item>
+        <item>GSM:4092,8760,48000,4096,8760,48000</item>
+        <item>TD_SCDMA:58254,349525,1048576,58254,349525,1048576</item>
+        <item>LTE_CA:4096,6291456,12582912,4096,1048576,2097152</item>
+        <item>NR_NSA:2097152,6291456,16777216,512000,2097152,8388608</item>
+        <item>NR_NSA_MMWAVE:2097152,6291456,16777216,512000,2097152,8388608</item>
+        <item>NR_SA:2097152,6291456,16777216,512000,2097152,8388608</item>
+        <item>NR_SA_MMWAVE:2097152,6291456,16777216,512000,2097152,8388608</item>
     </string-array>
 
     <!-- Flag indicating whether we should enable the automatic brightness.
@@ -164,7 +200,6 @@
         <item>455.291</item>
         <item>490.922</item>
         <item>500</item>
-        <item>580</item>
     </array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
@@ -197,24 +232,24 @@
          brightness modes but only the maximum brightness value obtainable in a sustainable manner.
          This array should be equal in size to config_screenBrightnessBacklight -->
     <array name="config_screenBrightnessNits">
-        <item>4.5215</item>
-        <item>33.37784</item>
-        <item>69.09702</item>
-        <item>105.53111</item>
-        <item>141.15657</item>
-        <item>177.40657</item>
-        <item>212.14172</item>
-        <item>247.64085</item>
-        <item>282.03754</item>
-        <item>317.2586</item>
-        <item>351.1292</item>
-        <item>384.87363</item>
-        <item>418.19705</item>
-        <item>451.90884</item>
-        <item>485.0235</item>
-        <item>517.10864</item>
-        <item>548.933</item>
-        <item>580</item>
+        <item>4.5225</item>
+        <item>28.774</item>
+        <item>59.5664</item>
+        <item>90.9751</item>
+        <item>121.6867</item>
+        <item>152.9367</item>
+        <item>182.8808</item>
+        <item>213.4835</item>
+        <item>243.1358</item>
+        <item>273.4988</item>
+        <item>302.6976</item>
+        <item>331.7876</item>
+        <item>360.5147</item>
+        <item>389.5766</item>
+        <item>418.1237</item>
+        <item>445.7833</item>
+        <item>473.2181</item>
+        <item>500</item>
     </array>
 
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness
@@ -258,7 +293,6 @@
         <item>7168</item>
         <item>8192</item>
         <item>8704</item>
-        <item>9728</item>
     </integer-array>
 
     <!-- Default screen brightness setting set.
@@ -276,7 +310,7 @@
          -2 is invalid so setting will resort to int value specified above.
          Set this to 0.0 to allow screen to go to minimal brightness.
          The user is forbidden from setting the brightness below this level. -->
-    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.003921569</item>
+    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.001960785</item>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
@@ -385,6 +419,10 @@
      If it is not supported due to modem limitations, USSD send over the CS pipe instead.-->
     <bool name="config_allow_ussd_over_ims">true</bool>
 
+    <!-- Boolean indicating if restoring network selection should be skipped -->
+    <!-- The restoring is handled by modem if it is true-->
+    <bool translatable="false" name="skip_restoring_network_selection">true</bool>
+
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">false</bool>
@@ -441,7 +479,7 @@
          appended after the path string to interpret coordinates in dp instead of px units.
          Note that a physical cutout should be configured in pixels for the best results.
     -->
-     <string name="config_mainBuiltInDisplayCutout">M 0,0 H -37 V 93 H 37 V 0 H 0 Z</string>
+     <string name="config_mainBuiltInDisplayCutout">M -24,0 L -24,36 L 24,36 L 24,0 Z @dp</string>
 
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent).
