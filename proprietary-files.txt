@@ -2903,7 +2903,7 @@ system/lib64/libsource.so
 system/lib64/libvcodec_cap.so
 system/lib64/libvcodec_capenc.so
 system/lib64/libvt_avsync.so
-system/priv-app/ImsService/ImsService.apk
+system/priv-app/ImsService/ImsService.apk|7361fd3c436be1ac7568667e561c209088a3d20a
 
 # Secure element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
