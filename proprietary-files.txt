@@ -2884,7 +2884,7 @@ system/framework/mediatek-ims-common.jar
 system/framework/mediatek-ims-extension-plugin.jar
 system/framework/mediatek-services.jar
 system/framework/mediatek-telecom-common.jar
-system/framework/mediatek-telephony-base.jar
+system/framework/mediatek-telephony-base.jar|d52d9f89ac1d6f6717ce1c0754225c4a6e1e0ff0
 system/framework/mediatek-telephony-common.jar
 system/framework/mediatek-wfo-legacy.jar
 system/lib/libmtk_vt_wrapper.so
