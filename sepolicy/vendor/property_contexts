@@ -6,6 +6,7 @@ persist.vendor.camera.                      u:object_r:vendor_camera_prop:s0
 ro.mtk_cam_dualzoom_support                 u:object_r:vendor_mtk_camera_prop:s0
 ro.mtk_cam_stereo_camera_support            u:object_r:vendor_mtk_camera_prop:s0
 vendor.debug.seninf.hs_trail                u:object_r:vendor_mtk_camera_prop:s0
+cam.egnsavefile.enable                      u:object_r:vendor_mtk_camera_prop:s0
 
 st_repair.debug.                            u:object_r:exported_default_prop:s0
 RUNTIME_OVERRIDE_OPENCL_MEM_TYPE            u:object_r:exported_default_prop:s0
