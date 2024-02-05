@@ -245,6 +245,7 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlayX6739 \
     FrameworksResOverlayX6739 \
     SettingsOverlayX6739 \
+    SystemUIOverlayX6739 \
     TelephonyOverlayX6739 \
     TetheringConfigOverlayX6739 \
     WifiOverlayX6739
