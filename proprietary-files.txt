@@ -1804,6 +1804,14 @@ vendor/lib64/liburee_meta_drmkeyinstall.so
 vendor/lib64/libwvhidl.so
 
 # Engineermode
+system/lib/libem_aoltest_jni.so
+system/lib/libem_audio_jni.so
+system/lib/libem_support_jni.so
+system/lib/libem_wifi_jni.so
+system/lib64/libem_aoltest_jni.so
+system/lib64/libem_audio_jni.so
+system/lib64/libem_support_jni.so
+system/lib64/libem_wifi_jni.so
 system/priv-app/EngineerMode/EngineerMode.apk
 vendor/bin/em_hidl
 vendor/etc/init/em_hidl_user.rc
