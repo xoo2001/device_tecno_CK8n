@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/infinix/X6739
+KERNEL_PATH := $(DEVICE_PATH)-kernel
+
 # Allow userspace reboots
 $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 
@@ -195,7 +198,7 @@ PRODUCT_PACKAGES += \
 
 # Kernel
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)-kernel/kernel:kernel
+    $(KERNEL_PATH)/kernel:kernel
 
 # Keylayout
 PRODUCT_COPY_FILES += \
