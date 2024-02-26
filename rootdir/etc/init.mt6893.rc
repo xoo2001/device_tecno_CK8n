@@ -1209,4 +1209,5 @@ on property:persist.vendor.mediatek.fast_charging.support=*
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
 
-
+on property:sys.boot_completed=1
+    write /sys/devices/platform/odm/odm:tran_battery/OTG_CTL 1
