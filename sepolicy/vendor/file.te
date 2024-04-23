@@ -4,7 +4,7 @@ type transsion_camera_data_file, file_type, data_file_type, mlstrustedobject;
 type vendor_watermark_data_file, file_type, data_file_type, mlstrustedobject;
 
 # Data
-type storage_dbg_data_file, file_type, data_file_type;
+type storage_dbg_data_file, file_type, core_data_file_type, data_file_type;
 
 # Fingerprint
 type sysfs_fp_name_path, fs_type, sysfs_type;
