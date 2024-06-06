@@ -1,4 +1,4 @@
-# Unpinned blobs from sys_tssi_64_armv82_infinix-user 13 TP1A.220624.014 502100 release-keys
+# Unpinned blobs from from sys_tssi_64_armv82_infinix-user 13 TP1A.220624.014 537496 release-keys
 
 # AEE
 vendor/lib/libaedv.so
@@ -2914,6 +2914,8 @@ system/lib64/libvcodec_cap.so
 system/lib64/libvcodec_capenc.so
 system/lib64/libvt_avsync.so
 system/priv-app/ImsService/ImsService.apk|7361fd3c436be1ac7568667e561c209088a3d20a
+system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so:system/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so:system/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # Secure element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
