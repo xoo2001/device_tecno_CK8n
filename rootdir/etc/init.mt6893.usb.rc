@@ -355,11 +355,6 @@ on post-fs
     chown system system /config/usb_gadget/g1/strings/0x409/serialnumber
     setprop vendor.usb.functions.ready 1
 
-on post-fs-data
-    mkdir /config/usb_gadget/g1/functions/via_modem.gs0
-    mkdir /config/usb_gadget/g1/functions/via_ets.gs0
-    mkdir /config/usb_gadget/g1/functions/via_atc.gs0
-
 on boot
     # bind mtp on the big core for MT6893
     write /sys/class/android_usb/android0/f_mtp/cpu_mask 0x80
