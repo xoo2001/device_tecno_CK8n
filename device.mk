@@ -71,6 +71,7 @@ PRODUCT_PACKAGES += \
     libaudioroute.vendor \
     libdynproc \
     libhapticgenerator \
+    libldacBT_bco \
     libprocessgroup.vendor
 
 PRODUCT_PACKAGES += \

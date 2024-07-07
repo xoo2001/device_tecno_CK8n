@@ -60,3 +60,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "both",
     check_elf_files: false,
 }
+
+cc_library_shared {
+    name: "libldacBT_bco",
+}
