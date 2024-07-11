@@ -1964,7 +1964,6 @@ vendor/etc/seccomp_policy/mediacodec.policy
 vendor/etc/seccomp_policy/mediaextractor.policy
 vendor/etc/seccomp_policy/mediaswcodec.policy
 vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml:vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml
-vendor/etc/mtk_omx_core.cfg
 vendor/etc/mtk_platform_codecs_config.xml
 vendor/lib/AV1SecureVdecCA.so
 vendor/lib/AVCSecureVdecCA.so
@@ -1972,13 +1971,6 @@ vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
 vendor/lib/libAVCSecureVencCA.so
 vendor/lib/libHEVCdec_sa.ca7.android.so
-vendor/lib/libMtkOmxAdpcmDec.so
-vendor/lib/libMtkOmxAlacDec.so
-vendor/lib/libMtkOmxApeDec.so
-vendor/lib/libMtkOmxCore.so
-vendor/lib/libMtkOmxGsmDec.so
-vendor/lib/libMtkOmxMp3Dec.so
-vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libcodec2_mtk_c2store.so
 vendor/lib/libcodec2_mtk_vdec.so
 vendor/lib/libcodec2_mtk_venc.so
@@ -1995,7 +1987,6 @@ vendor/lib/libh264dec_sa.ca7.so
 vendor/lib/libh264dec_sd.ca7.so
 vendor/lib/libh264dec_se.ca7.so
 vendor/lib/libh264enc_sa.ca7.so
-vendor/lib/libmp3dec_mtk.so
 vendor/lib/libmp4enc_sa.ca7.so
 vendor/lib/libmp4enc_xa.ca7.so
 vendor/lib/libstagefrighthw.so
