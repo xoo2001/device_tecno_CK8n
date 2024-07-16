@@ -94,11 +94,9 @@ vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 
 # Audio (FX modules)
-vendor/lib/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib/soundfx/libdtsaudio.so
 vendor/lib/libdts-eagle-shared.so
 vendor/lib/libdtsdsec.so
-vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib64/soundfx/libdtsaudio.so
 vendor/lib64/libdts-eagle-shared.so
 vendor/lib64/libdtsdsec.so
