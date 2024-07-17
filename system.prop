@@ -44,14 +44,6 @@ persist.dbg.wfc_avail_ovr=1
 ro.kernel.zio=38,108,105,16
 ro.iorapd.enable=false
 
-# Logging
-persist.log.tag.BufferQueueDump=I
-persist.log.tag.BufferQueueProducer=I
-persist.log.tag.GraphicBuffer=I
-persist.log.tag.SurfaceControl=I
-persist.log.tag.Telecom=I
-persist.log.tag.Telephony=I
-
 # Media
 debug.stagefright.c2inputsurface=-1
 media.stagefright.thumbnail.prefer_hw_codecs=true
