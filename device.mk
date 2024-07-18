@@ -368,9 +368,7 @@ PRODUCT_COPY_FILES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6893 \
-    init_conninfra.rc \
     init.cgroup.rc \
-    init.connectivity.common.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6893.rc \
