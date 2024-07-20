@@ -1,3 +1,6 @@
+# Audio
+ro.vendor.qti.va_aosp.support               u:object_r:vendor_exported_system_prop:s0 exact bool
+
 # Fingerprint
 gf.debug.                                   u:object_r:vendor_fingerprint_prop:s0
 

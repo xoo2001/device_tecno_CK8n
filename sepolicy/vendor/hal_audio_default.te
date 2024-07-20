@@ -8,4 +8,5 @@ allow hal_audio_default vow_device:chr_file rw_file_perms;
 dontaudit hal_audio_default hal_power_hwservice:hwservice_manager find;
 
 get_prop(hal_audio_default, vendor_audio_prop)
+get_prop(hal_audio_default, vendor_exported_system_prop)
 set_prop(hal_audio_default, vendor_mtk_audiohal_prop)
