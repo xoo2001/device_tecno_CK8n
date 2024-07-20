@@ -71,8 +71,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libalsautils \
     libaudiofoundation.vendor \
+    libaudioroute.vendor \
     libdynproc \
-    libhapticgenerator
+    libhapticgenerator \
+    libprocessgroup.vendor
 
 PRODUCT_PACKAGES += \
     MtkInCallService
@@ -103,6 +105,8 @@ PRODUCT_PACKAGES += \
     libshim_camera_metadata \
     libdng_sdk.vendor \
     libexpat.vendor \
+    libexif.vendor \
+    libpiex \
     libpng.vendor
 
 # Cgroup
@@ -167,7 +171,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss.visibility_control@1.0.vendor
 
 PRODUCT_PACKAGES += \
-    libcurl.vendor
+    libcurl.vendor \
+    libjsoncpp.vendor \
+    libsqlite.vendor
 
 # Health
 PRODUCT_PACKAGES += \
@@ -417,6 +423,10 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.mediatek
+
+# Required for QPR3
+PRODUCT_PACKAGES += \
+    libdumpstateutil.vendor
 
 # VNDK
 PRODUCT_COPY_FILES += \
