@@ -72,6 +72,7 @@ persist.vendor.tran_boottime=0
 persist.vendor.tran_sign_prj=0
 persist.vendor.tran_source_prj=0
 persist.vendor.tran_target_prj=0
+ro.kom_telephony_support=0
 
 # RIL
 vendor.rild.libargs=-d /dev/ttyC0

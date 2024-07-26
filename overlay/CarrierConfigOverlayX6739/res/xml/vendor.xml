@@ -623,7 +623,7 @@
         <boolean name="mtk_carrier_wfc_mode_domestic_roaming_to_home" value="true" />
     </carrier_config>
     <carrier_config mcc="732" mnc="360">
-        <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <int name="carrier_default_wfc_ims_mode_int" value="2" />
         <boolean name="mtk_support_vt_ss_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="738" mnc="00">
@@ -843,7 +843,7 @@
         <boolean name="mtk_support_vt_ss_bool" value="true" />
     </carrier_config>
     <carrier_config cid="1580">
-        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+        <boolean name="carrier_default_wfc_ims_enabled_bool" value="false" />
     </carrier_config>
     <carrier_config cid="1599">
         <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />

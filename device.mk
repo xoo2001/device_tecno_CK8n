@@ -16,14 +16,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Inherit virtual_ab_ota product
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch.mk)
+# Devices launching with Virtual A/B and has a vendor_boot partition is
+# preferred to inherit from this makefile instead of launch.mk.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 # Enable compressed snapshots with Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/android_t_baseline.mk)
-
-PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # A/B
 PRODUCT_PACKAGES += \
@@ -148,7 +147,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Engineermode
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/system-ext-permissions-com.mediatek.engineermode.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/system-ext-permissions-com.mediatek.engineermode.xml
+    $(LOCAL_PATH)/configs/permissions/system-ext-permissions-com.mediatek.engineermode.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/system-ext-permissions-com.mediatek.engineermode.xml
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -366,21 +365,24 @@ PRODUCT_BOOT_JARS += \
     mediatek-telephony-common
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
 
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6893 \
+    fstab.mt6893.vendor_ramdisk \
     init.cgroup.rc \
     init.connectivity.rc \
+    init.insmod.mt6893.cfg \
+    init.insmod.sh \
     init.modem.rc \
     init.mt6893.rc \
     init.mt6893.usb.rc \
+    init.mtkgki.rc \
     init.project.rc \
     init.recovery.mt6893.rc \
     init.sensor_2_0.rc \
     init.target.rc \
-    init.stnfc.rc \
     ueventd.mtk.rc
 
 PRODUCT_COPY_FILES += \

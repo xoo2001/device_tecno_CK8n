@@ -1,3 +1,5 @@
+# MTK platform .rc configure
+
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6893.usb.rc
 import /vendor/etc/init/hw/init.project.rc
@@ -7,9 +9,12 @@ import /vendor/etc/init/hw/init.mal.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.cgroup.rc
 
+# init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
 import /vendor/etc/init/hw/init.modem.rc
+# *** DO NOT import the new rc file after this line ***
 
 on early-init
+    # boot perf. tune
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "0 0 0 0 0 0"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 1
 
@@ -28,18 +33,10 @@ on early-init && property:ro.build.type=userdebug
     setprop persist.dbg.keep_debugfs_mounted true
 
 on init
+    # dex2oat_threads add by dewang.tan 20231227 start
+    setprop persist.vendor.powerhal.dex2oat_threads 0
+    # dex2oat_threads add by dewang.tan 20231227 end
 
-    #SPD: add dex2oat to 0-6 core by tingjiang.wang 20230316 start
-    mkdir /dev/cpuset/dex2oat
-    copy /dev/cpuset/cpus /dev/cpuset/dex2oat/cpus
-    copy /dev/cpuset/mems /dev/cpuset/dex2oat/mems
-
-    chown system system /dev/cpuset/dex2oat
-    chown system system /dev/cpuset/dex2oat/tasks
-    chown system system /dev/cpuset/dex2oat/cpus
-    chmod 0664 /dev/cpuset/dex2oat/tasks
-    chmod 0664 /dev/cpuset/dex2oat/cpus
-    #SPD: add dex2oat to 0-6 core by tingjiang.wang 20230316 end
 
     #BSP:add XLLSHLSSP-17 for tranfs by shentao.yang 20190603 start
     mkdir /tranfs 0771 system system
@@ -73,6 +70,7 @@ on late-init
 on charger
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
+
     chmod 0660 /dev/spm
     chown system system /dev/spm
     chmod 0666 /dev/kmsg
@@ -97,6 +95,7 @@ on charger
     chmod 0660 /sys/power/wake_unlock
     chmod 0660 /sys/power/wakeup_count
     write /sys/power/pm_freeze_timeout 2000
+
     start fuelgauged
     start fuelgauged_nvram
 
@@ -183,16 +182,17 @@ on post-fs
 on post-fs-data
     wait_for_prop vendor.all.modules.ready 1
 
-    # zram
-    swapon_all /vendor/etc/fstab.mt6893
-
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
     write /sys/block/mmcblk0/queue/nr_requests 256
     write /sys/block/sdc/queue/iostats 0
     write /sys/block/sdc/queue/read_ahead_kb 2048
+    # STD: hao.lv5 add atomic storage 2.0 20240305 start
+on post-fs-data && property:ro.vendor.low_latency_sched_enable=false
     write /sys/block/sdc/queue/nr_requests 256
+on post-fs-data
+    # STD: hao.lv5 add atomic storage 2.0 20240305 end
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
     write /sys/block/dm-2/queue/read_ahead_kb 2048
@@ -273,6 +273,8 @@ on post-fs-data
     chmod 0775 /vendor/xbin/MPED
     chmod 0666 /dev/gps_emi
 
+# -----------------------
+# Add by MTK
     # SCP log
     chmod 0660 /sys/class/misc/scp/scp_mobile_log
     chown root system /sys/class/misc/scp/scp_mobile_log
@@ -301,10 +303,14 @@ on post-fs-data
     chmod 0440 /dev/sspm
     chown root system /dev/sspm
 
+    # radvd
+    chmod 444 /etc/radvd/radvd.conf
+
     # Mali 3D GPU driver
     chmod 666 /dev/mali0
 
     # Touch Panel
+    # chmod 0664 /dev/touch
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
     chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
     chown root diag /sys/module/tpd_setting/parameters/tpd_mode
@@ -328,7 +334,10 @@ on post-fs-data
     chown root system /dev/alarm
 
     # M4U
+    #insmod /vendor/lib/modules/m4u.ko
+    #mknod /dev/M4U_device c 188 0
     chmod 0444 /dev/m4u
+    #chown system media /dev/M4U_device
     chmod 0640 /proc/m4u
     chown system media /proc/m4u
     chmod 0640 /proc/mtk_iommu
@@ -368,9 +377,19 @@ on post-fs-data
 
     # Fingerprint
     chmod 0666 /dev/goodix_fp
+    #qing.li ck7n p1 bring up start
     chmod 0666 /sys/class/leds/lcd-backlight/brightness
     chmod 0666 /sys/devices/platform/1400e000.dsi/lcm_hbm_state
-    
+    #BSP:add fp X6710U-558 by xin.li9 20240326 start
+    chmod 0666 /sys/kernel/tran_display/lcm_name
+    chmod 0666 /sys/kernel/tran_display/lcm_hbm_state
+    #BSP:add fp X6710U-558 by xin.li9 20240326 end
+    #qing.li ck7n p1 bring up en
+    # Display
+    #BSP:add pcd check by you.tan 20240115 start
+    chmod 0666 /sys/kernel/tran_display/lcm_dimming_state
+    chmod 0666 /sys/kernel/tran_display/lcm_pcd_check
+    #BSP:add pcd check by you.tan 20240115 end
     # v4l2 codec
     chmod 0660 /dev/vcu
     chown media system /dev/vcu
@@ -384,6 +403,7 @@ on post-fs-data
     mkdir /data/vendor/vcodec/out 0770 media system
 
     # MJC
+    #insmod /vendor/lib/modules/mjc_kernel_driver.ko
     chmod 0660 /dev/MJC
     chown media system /dev/MJC
 
@@ -393,7 +413,10 @@ on post-fs-data
     # Charging Battery
     chown radio radio /sys/devices/platform/battery/Charging_CallState
 
+    #SDD:add OTG feature for TESSCR-6368 by weike.xu 20210512 start
     chmod 0666 /sys/devices/platform/odm/odm:tran_battery/OTG_CTL
+    #SDD:add OTG feature for TESSCR-6368 by weike.xu 20210512 end
+    #BSP: modify for battery aging feature XLBEPUB-6 by fan.hong 20200723 end
     chmod 0666 /sys/devices/platform/odm/odm:tran_battery_aging/AGING_FG
     chmod 0666 /sys/devices/platform/odm/odm:tran_battery_aging/AGING_CALCULATE
     chmod 0666 /sys/devices/platform/odm/odm:tran_battery_aging/ESTIMATE_RATE
@@ -408,17 +431,29 @@ on post-fs-data
     chmod 0666 /sys/wireless/wireless/Rx/fake_rx_detect
     chmod 0666 /sys/devices/platform/pca_dv2_algo/super_fast_charge_thermal
     chown system system /sys/devices/platform/pca_dv2_algo/super_fast_charge_thermal
+    #BSP: modify for battery aging feature XLBEPUB-6 by fan.hong 20200723 start
 
+    #MG-CHG(Bypass):bypass function by yongqing 20230302 start
     chown system system /sys/devices/platform/charger/tran_aichg_disable_charger
     chmod 0666 /sys/devices/platform/charger/tran_aichg_disable_charger
+    chown system system /sys/devices/platform/charger/bypass_charger
+    chmod 0666 /sys/devices/platform/charger/bypass_charger
     chown system system /sys/devices/platform/odm/odm:smart_charging/smart_charging
     chmod 0664 /sys/devices/platform/odm/odm:smart_charging/smart_charging
+    #MG-CHG(Bypass):bypass function by yongqing 20230302 end
+    #BSP:CHG leds function by minglong.li 20230223 start
     chown system system /sys/devices/platform/11d03000.i2c7/i2c-7/7-006a/tran_led_cmd
     chmod 0666 /sys/devices/platform/11d03000.i2c7/i2c-7/7-006a/tran_led_cmd
-    chown system system /sys/devices/platform/11007000.i2c13/i2c-13/13-0055/battery_class/bq27z561_slave/batt_status
-    chmod 0666 /sys/devices/platform/11007000.i2c13/i2c-13/13-0055/battery_class/bq27z561_slave/batt_status
-    chown system system /sys/devices/platform/1101b000.i2c12/i2c-12/12-0055/battery_class/bq27z561_master/batt_status
-    chmod 0666 /sys/devices/platform/1101b000.i2c12/i2c-12/12-0055/battery_class/bq27z561_master/batt_status
+    #BSP:CHG leds function by minglong.li 20230223 start
+
+    #MD_CHG:add for charger by shaoan.zhu start Wed 20 Jul 2022 07:29:35 PM CST
+    chmod 0666 /sys/class/battery_class/bq27z561_master/batt_status
+    chmod 0666 /sys/class/battery_class/bq27z561_slave/batt_status
+    chown system system /sys/devices/platform/11007000.i2c13/i2c-13/13-0055/battery_class/bq27z561_master/batt_status
+    chmod 0666 /sys/devices/platform/11007000.i2c13/i2c-13/13-0055/battery_class/bq27z561_master/batt_status
+    chown system system /sys/devices/platform/1101b000.i2c12/i2c-12/12-0055/battery_class/bq27z561_slave/batt_status
+    chmod 0666 /sys/devices/platform/1101b000.i2c12/i2c-12/12-0055/battery_class/bq27z561_slave/batt_status
+    #MD_CHG:add for charger by shaoan.zhu end Wed 20 Jul 2022 07:29:37 PM CST
 
     # PMIC property
     chown radio system /sys/devices/platform/mt-pmic/low_battery_protect_stop
@@ -434,7 +469,6 @@ on post-fs-data
     chown system /sys/devices/platform/gsensor/driver/cpsopmode
     chown system /sys/devices/platform/gsensor/driver/cpsrange
 
-    # Input
     chown system /sys/class/input/input1/enable
     chown system /sys/class/input/input1/delay
     chown system /sys/class/input/input1/wake
@@ -492,6 +526,10 @@ on post-fs-data
     chmod 0660 /dev/sw_sync
     chown system graphics /dev/sw_sync
 
+    # EM baseband file
+    chown root diag /vendor/bin/baseband_regdump
+    chmod 4750 /vendor/bin/baseband_regdump
+
     #pmu
     chown root radio /sys/devices/platform/mt-pmic/pmic_access_bank0
     chown root radio /sys/devices/platform/mt-pmic/pmic_access_bank1
@@ -512,6 +550,9 @@ on post-fs-data
     chmod 0664 /proc/cpu_ss/cpu_ss_period
     chmod 0664 /proc/cpu_ss/cpu_ss_period_mode
 
+    #EM eint
+    chown root diag /sys/bus/platform/drivers/eint/current_eint
+
     # Android SEC related device nodes
     chmod 0660 /dev/sec
     chown root system /dev/sec
@@ -519,6 +560,8 @@ on post-fs-data
     # FM Radio device node
     chmod 0660 /dev/fm
     chown media media /dev/fm
+
+    # device apc settings
 
     # device info /proc interface
     chmod 0440 /dev/devmap
@@ -541,6 +584,7 @@ on post-fs-data
     chown media system /dev/hdmitx
     chmod 0664 /dev/hdmitx
 
+
     # JPEG
     chmod 0666 /proc/mtk_jpeg
 
@@ -558,6 +602,7 @@ on post-fs-data
     chmod 0660 /dev/gz_kree
     chown system system /dev/gz_kree
 
+    #ITD:add by ziying.shen for add cam 3rd function 20221207 start
     # DualCam
     mkdir /data/vendor/multicam  0777 system system
     mkdir /data/vendor/multicam/dualcam  0777 system system
@@ -571,6 +616,7 @@ on post-fs-data
     mkdir /data/vendor/meghumaneffect 0777 system system
     mkdir /data/vendor/meg_working_dir 0777 system system
     mkdir /data/vendor/meg_working_dir/anc_fullhdr 0777 system system
+    #ITD:add by ziying.shen for add cam 3rd function 20221207 end
 
     # Camera
     chmod 0660 /dev/camera-sysram
@@ -598,13 +644,15 @@ on post-fs-data
     chmod 0660 /dev/vpu
     chmod 0660 /dev/apusys
 
+#ITD: Add vi5300 By isp_team 20220303 Start
     # Laser
     chmod 0660 /dev/cwvi5300
     chmod 0664 /sys/devices/virtual/laser/laser/enable_cali_sensor
     chmod 0666 /sys/devices/virtual/laser/laser/calibration_data
     chmod 0666 /sys/devices/virtual/laser/laser/enable_ps_sensor
     chmod 0666 /sys/devices/virtual/laser/laser/laser_sensor_info
-
+#ITD: Add vi5300 By isp_team 20220303 End
+#ITD: Modify Camera BringUp By Jie.Liu 220127 Start
     # OIS
     chmod 0660 /dev/dw9781_ois
     #tranDualCam
@@ -614,7 +662,11 @@ on post-fs-data
     mkdir /data/vendor/multicam/sat  0777 system system
     # tranFusion
     mkdir /data/vendor/multicam/fusion  0777 system system
+#ITD: Modify Camera BringUp By Jie.Liu 220127 End
+
+#ITD: Modify Camera BringUp By Xinwang.Sha 221124 Start
     chmod 0660 /dev/cml421_ois
+#ITD: Modify Camera BringUp By Xinwang.Sha 221124 End
 
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
@@ -641,12 +693,14 @@ on post-fs-data
     chown system camera /dev/vpu
     chown system camera /dev/apusys
 
+#ITD: Add vi5300 By isp_team 20220303 Start
     # Laser
     chown system camera /dev/cwvi5300
     chown system system /sys/devices/virtual/laser/laser/enable_cali_sensor
     chown system system /sys/devices/virtual/laser/laser/calibration_data
     chown system system /sys/devices/virtual/laser/laser/enable_ps_sensor
-
+#ITD: Add vi5300 By isp_team 20220303 End
+#ITD: Modify Camera BringUp By Jie.Liu 220127 Start
     # OIS
     chown system camera /dev/dw9781_ois
     chown root root /sys/class/main2_light/main2_light/main2_light
@@ -656,7 +710,11 @@ on post-fs-data
     chmod 0666 /sys/class/torch/torch/torch_level
     chown root root /sys/class/sub_torch/sub_torch/sub_torch_level
     chmod 0666 /sys/class/sub_torch/sub_torch/sub_torch_level
+#ITD: Modify Camera BringUp By Jie.Liu 220127 End
+
+#ITD: Modify Camera BringUp By Xinwang.Sha 221124 Start
     chown system camera /dev/cml421_ois
+#ITD: Modify Camera BringUp By Xinwang.Sha 221124 End
 
     # CCU
     chmod 0660 /dev/ccu
@@ -696,7 +754,9 @@ on post-fs-data
     chmod 0660 /dev/mtk_dfrc
     chown system graphics /dev/mtk_dfrc
 
+
     # Change partition permission
+
     chmod 0640 /mtd@sec_ro
     chown root system /mtd@sec_ro
 
@@ -734,7 +794,7 @@ on post-fs-data
 
     chmod 0666 /dev/uio0
 
-    # OTP
+    # otp
     chmod 0660 /proc/driver/otp
     chown root system /proc/driver/otp
 
@@ -768,6 +828,8 @@ on post-fs-data
     chmod 0660 /dev/drm_wv
     chown media system /dev/drm_wv
 
+# End of adding by MTK drivers
+# -----------------------
 on early-boot
     verity_update_state
 
@@ -778,9 +840,12 @@ on boot
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
 
+    #ITD:add flashlight by huihangzhou 2022/11/23 start
     chmod 0666 /sys/devices/virtual/torch/torch/torch_level
     chmod 0666 /sys/devices/virtual/sub_torch/sub_torch/sub_torch_level
+    #ITD:add flashlight by huihangzhou 2022/11/23 end
 
+    #BSP:add KHLHLWYS-14 by qiuwei.wang 2022.02.14 start
     chmod 0666 /dev/MT_pmic_adc_cali
     chmod 0666 /sys/class/leds/red/brightness
     chmod 0666 /sys/class/leds/blue/brightness
@@ -788,20 +853,23 @@ on boot
     chmod 0666 /sys/devices/platform/tran_battery/tran_bat_temp
     chmod 0666 /sys/devices/platform/odm/odm:tran_battery/tran_bat_temp
     chmod 0666 /sys/devices/platform/odm/odm:tran_battery/CHG_CAPACITY_TEST
+    #BSP:add KHLHLWYS-14 by qiuwei.wang 2022.02.14 end
 
-    # CPUFreq
     chown system system /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
     chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
     chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
     chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
     chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
     chmod 0660 /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
+    chown system system /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
+    chown root   system /sys/kernel/debug/binder/transaction_log_enable
+    chown root   system /sys/kernel/debug/binder/perf_evalue
     chown system system /sys/devices/system/cpu/rq-stats/htasks_thresh
     chmod 0660 /sys/devices/system/cpu/rq-stats/htasks_thresh
     chown system system /sys/devices/system/cpu/rq-stats/avg_htasks_thresh
     chmod 0660 /sys/devices/system/cpu/rq-stats/avg_htasks_thresh
 
-    # MLOG
     chown system /sys/module/mlog/parameters/do_mlog
     chown system /sys/module/mlog/parameters/timer_intval
 
@@ -990,13 +1058,29 @@ on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/nr_requests 128
     write /sys/block/sdc/queue/iostats 1
     write /sys/block/sdc/queue/read_ahead_kb 512
+# STD: hao.lv5 add atomic storage 2.0 20240305 start
+on property:sys.boot_completed=1 && property:ro.vendor.low_latency_sched_enable=false
     write /sys/block/sdc/queue/nr_requests 128
+on property:sys.boot_completed=1
+# STD: hao.lv5 add atomic storage 2.0 20240305 end
     write /sys/block/dm-0/queue/read_ahead_kb 128
     write /sys/block/dm-1/queue/read_ahead_kb 128
     write /sys/block/dm-2/queue/read_ahead_kb 128
     write /sys/block/dm-3/queue/read_ahead_kb 128
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
+#SPD: add for control dex2oat cpu by fan.feng1 20230619 start
+    write /dev/cpuset/dex2oat/cpus 0-3
+    write /dev/cpuctl/dex2oat/cpu.shares 512
+    setprop persist.vendor.powerhal.dex2oat_threads 4
+#SPD: add for control dex2oat cpu by fan.feng1 20230619 end
+#KERENL: add cgroup customise profiles by chaoquan.li at 20240110 start
+    write /dev/cpuset/foreground-l/cpus 0-6
+    write /dev/cpuset/background-l/cpus 0-1
+    write /dev/cpuctl/foreground-l/cpu.shares 2048
+    write /dev/cpuctl/background-l/cpu.shares 512
+#KERENL: add cgroup customise profiles by chaoquan.li at 20240110 end
+
 
 on property:sys.boot_completed=1
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1 -1 -1"

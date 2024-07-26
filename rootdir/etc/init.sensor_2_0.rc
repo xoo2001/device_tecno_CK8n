@@ -3,5 +3,7 @@ on post-fs-data
     # calibration
     mkdir /data/vendor/sensor 0774 system system
     # Sensor
-    chmod 0660 /dev/hf_manager
+#BSP:add  allow radio access for sar XLQHVW-2239 by yuan.tao 20230615 start
+    chmod 0666 /dev/hf_manager
+#BSP:add  allow radio access for sar XLQHVW-2239 by yuan.tao 20230615 end
     chown system system /dev/hf_manager

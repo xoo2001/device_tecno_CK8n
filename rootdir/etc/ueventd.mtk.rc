@@ -160,13 +160,24 @@
 # Change ION driver permission
 /dev/ion                  0666   system     graphics
 
-# Change DMA_HEAP deice permission
+# Change DMA_HEAP device permission
 #     refs: /system/core/rootdir/uevent.rc
 #           /dev/dma_heap/system      0444   system     system
 /dev/dma_heap/mtk_mm                        0444   system     system
 /dev/dma_heap/mtk_mm-uncached               0444   system     system
-/dev/dma_heap/mtk_prot_region-uncached      0444   system     system
-/dev/dma_heap/mtk_svp_region-uncached       0444   system     system
+/dev/dma_heap/mtk_svp_page-uncached                 0444   system     system
+/dev/dma_heap/mtk_prot_page-uncached                0444   system     system
+/dev/dma_heap/mtk_svp_region                        0444   system     system
+/dev/dma_heap/mtk_svp_region-aligned                0444   system     system
+/dev/dma_heap/mtk_svp_region-uncached               0444   system     system
+/dev/dma_heap/mtk_prot_region                       0444   system     system
+/dev/dma_heap/mtk_prot_region-aligned               0444   system     system
+/dev/dma_heap/mtk_prot_region-uncached              0444   system     system
+/dev/dma_heap/mtk_2d_fr_region                      0444   system     system
+/dev/dma_heap/mtk_2d_fr_region-aligned              0444   system     system
+/dev/dma_heap/mtk_wfd_region                        0444   system     system
+/dev/dma_heap/mtk_wfd_region-aligned                0444   system     system
+/dev/dma_heap/mtk_wfd_page-uncached                 0444   system     system
 
 #touch
 /dev/touch                0660   root       system
@@ -178,3 +189,9 @@
 
 #MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
+
+#BSP:modify ultrasound support ADYLHBSLA-4 by jianbin.zhu 20230506 start
+#elliptic sensor
+/dev/elliptic0            0644   system     system
+/dev/elliptic1            0644   system     system
+#BSP:modify ultrasound support ADYLHBSLA-4 by jianbin.zhu 20230506 end

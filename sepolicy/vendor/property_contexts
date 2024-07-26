@@ -34,8 +34,5 @@ ro.vendor.dp.bypass.mdp                     u:object_r:vendor_mtk_mdp_prop:s0
 vendor.dp.rdma.workaround.enable            u:object_r:vendor_mtk_mdp_prop:s0
 vendor.dp.reduceconfig.disable              u:object_r:vendor_mtk_mdp_prop:s0
 
-# NVRAM
-vendor.service.nvram_restore                u:object_r:vendor_mtk_service_nvram_restore_prop:s0
-
 # VT
 ro.vendor.vt.                               u:object_r:vendor_mtk_vendor_vt_prop:s0

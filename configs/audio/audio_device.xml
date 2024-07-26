@@ -1001,6 +1001,8 @@
             <kctl name="UL2_CH2 DL2_CH2" value="1" />
             <kctl name="UL2_CH1 DL12_CH1" value="1" />
             <kctl name="UL2_CH2 DL12_CH2" value="1" />
+            <kctl name="UL2_CH1 DL3_CH1" value="1" />
+            <kctl name="UL2_CH2 DL3_CH2" value="1" />
             <kctl name="UL2_CH1 DL4_CH1" value="1" />
             <kctl name="UL2_CH2 DL4_CH2" value="1" />
         </path>
@@ -1009,6 +1011,8 @@
             <kctl name="UL2_CH2 DL2_CH2" value="0" />
             <kctl name="UL2_CH1 DL12_CH1" value="0" />
             <kctl name="UL2_CH2 DL12_CH2" value="0" />
+            <kctl name="UL2_CH1 DL3_CH1" value="0" />
+            <kctl name="UL2_CH2 DL3_CH2" value="0" />
             <kctl name="UL2_CH1 DL4_CH1" value="0" />
             <kctl name="UL2_CH2 DL4_CH2" value="0" />
         </path>
@@ -1495,6 +1499,7 @@
             <kctl name="MISO2_MUX" value="UL2_CH1" />
             <kctl name="UL_SRC_MUX" value="AMIC" />
             <kctl name="UL2_SRC_MUX" value="AMIC" />
+            <kctl name="usb_call_echo_ref" value="0" />
         </path>
         <path name="MD1_TO_CAPTURE2" value="turnon">
             <kctl name="UL2_CH1 PCM_2_CAP_CH1" value="1" />
@@ -1628,7 +1633,7 @@
             <kctl name="UL6_CH1 DL6_CH1" value="0" />
             <kctl name="UL6_CH2 DL6_CH2" value="0" />
         </path>
-        <path name="PLAYBACK4_TO_CAPTURE6" value="turnoff">
+        <path name="PLAYBACK4_TO_CAPTURE6" value="turnon">
             <kctl name="UL6_CH1 DL4_CH1" value="1" />
             <kctl name="UL6_CH2 DL4_CH2" value="1" />
         </path>

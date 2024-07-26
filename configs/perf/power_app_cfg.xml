@@ -1330,6 +1330,13 @@ any software that is unrelated to enhancing end-user experience. -->
                 <data cmd="PERF_RES_FPS_FBT_BOOST_TA" param1="1"></data>
             </FPS>
         </Activity>
+        <Activity name="Common">
+            <FPS value="Common">
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1350000"></data>
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="1537000"></data>
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="659000"></data>
+            </FPS>
+        </Activity>
     </Package>
     <Package name="com.smile.gifmaker">
         <Activity name="Common">
@@ -1748,13 +1755,12 @@ any software that is unrelated to enhancing end-user experience. -->
         <Activity name="Common">
             <FPS value="Common">
                 <data cmd="PERF_RES_THERMAL_POLICY" param1="3"></data>
-            </FPS>
-        </Activity>
-        <Activity name="com.example.benchmark.ui.teststress.activity.ActivityStressTest">
-            <FPS value="Common">
-                <data cmd="PERF_RES_THERMAL_POLICY" param1="14"></data>
-                <data cmd="PERF_RES_CPUFREQ_MAX_HL_CLUSTER_1" param1="2200000"></data>
-                <data cmd="PERF_RES_CPUFREQ_MAX_HL_CLUSTER_2" param1="1998000"></data>
+                <data cmd="PERF_RES_CPUFREQ_PERF_MODE" param1="1"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_CPUFREQ_MAX_HL_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MAX_HL_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MAX_HL_CLUSTER_2" param1="3100000"></data>
             </FPS>
         </Activity>
     </Package>
@@ -1762,6 +1768,12 @@ any software that is unrelated to enhancing end-user experience. -->
         <Activity name="Common">
             <FPS value="Common">
                 <data cmd="PERF_RES_THERMAL_POLICY" param1="3"></data>
+                <data cmd="PERF_RES_CPUFREQ_PERF_MODE" param1="1"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_CPUFREQ_MAX_HL_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MAX_HL_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MAX_HL_CLUSTER_2" param1="3100000"></data>
             </FPS>
         </Activity>
     </Package>
@@ -1900,6 +1912,24 @@ any software that is unrelated to enhancing end-user experience. -->
                 <data cmd="PERF_RES_FRS_PTIME" param1="3"></data>
                 <data cmd="PERF_RES_FRS_OT_PTIME" param1="1"></data>
                 <data cmd="PERF_RES_FRS_MIN_FPS" param1="26"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.mm">
+        <Activity name="com.tencent.mm.ui.LauncherUI">
+            <FPS value="Common">
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1350000"></data>
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="1537000"></data>
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="659000"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.mobileqq">
+        <Activity name="com.tencent.mobileqq.activity.SplashActivity">
+            <FPS value="Common">
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1350000"></data>
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="1537000"></data>
+		<data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="659000"></data>
             </FPS>
         </Activity>
     </Package>
