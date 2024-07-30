@@ -19,6 +19,9 @@
 /sys/kernel/tran_fp(/.*)?                                                                       u:object_r:sysfs_fp_name_path:s0
 /data/vendor/goodix/gf_data(/.*)?                                                               u:object_r:vendor_gf_data_file:s0
 
+# kmsetkey
+/(vendor|system\/vendor)/bin/kmsetkey_ca.trustonic                                              u:object_r:trustonic_kmsetkey_ca_exec:s0
+
 # tne
 /(system\/vendor|vendor)/bin/hw/vendor.tne@1.0-service                                          u:object_r:tnev_exec:s0
 /dev/tnek                                                                                       u:object_r:tneengine_tnek_file:s0

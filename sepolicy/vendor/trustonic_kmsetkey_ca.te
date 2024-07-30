@@ -1,0 +1,12 @@
+type trustonic_kmsetkey_ca, domain, halclientdomain, hal_keymaster_client;
+type trustonic_kmsetkey_ca_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(trustonic_kmsetkey_ca)
+
+allow trustonic_kmsetkey_ca mnt_vendor_file:dir search;
+allow trustonic_kmsetkey_ca persist_data_file:dir search;
+allow trustonic_kmsetkey_ca persist_data_file:file { read getattr open };
+allow trustonic_kmsetkey_ca property_socket:sock_file write;
+allow trustonic_kmsetkey_ca init:unix_stream_socket connectto;
+
+set_prop(trustonic_kmsetkey_ca, vendor_mtk_trustonic_tee_prop)
