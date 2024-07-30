@@ -23,6 +23,7 @@ genfscon proc /gesture_function                                                 
 genfscon proc /main_gesture_function                                                                u:object_r:proc_main_gesture_function:s0
 
 # Label wakeup nodes
+genfscon sysfs /devices/platform/10026000.pwrap/10026000.pwrap:mt6359p/mt6359p-rtc/rtc/rtc0/alarmtimer.0.auto/wakeup        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-0008/wakeup                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-0066/wakeup                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11cb0000.i2c3/i2c-3/3-0067/wakeup                                  u:object_r:sysfs_wakeup:s0
@@ -34,9 +35,30 @@ genfscon sysfs /devices/platform/19030000.vpu_core0/wakeup                      
 genfscon sysfs /devices/platform/19031000.vpu_core1/wakeup                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/19032000.vpu_core2/wakeup                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/1a000000.camsys/wakeup                                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/mtk-mst-div-chg/wakeup                        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-div-chg/wakeup                        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/extcon_usb/wakeup                                                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/mtk_ctd/power_supply/mtk_charger_type/wakeup                       u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:tran_auto_test/power_supply/tran-auto-test/wakeup40        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/odm/odm:usb_switch/power_supply/usb_switch/wakeup                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/pca_dv2_algo/wakeup                                                u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/pe5/wakeup                                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-03/wakeup                               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-06/wakeup                               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10027000.spmi/spmi-0/0-07/wakeup                               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10228000.mailbox/wakeup/wakeup                                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11015000.i2c/i2c-0/0-0038/input/input4/wakeup                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1101a000.i2c/i2c-11/11-0055/wakeup                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/10318000.mailbox/wakeup                                        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11cb0000.i2c/i2c-3/3-0008/wakeup                               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11cb0000.i2c/i2c-3/3-0067/wakeup                               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-0034/mt6360_chg.2.auto/power_supply/charger/wakeup                u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-0034/mt6360_chg.2.auto/wakeup             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-0034/wakeup                               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-5/5-004e/wakeup                               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/18000000.consys/wakeup                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1f000000.mdp/wakeup                                            u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1f000000.mmlsys_config/wakeup                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/usb0/11200000.xhci0/wakeup                                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/usb0/wakeup                                                        u:object_r:sysfs_wakeup:s0
 
