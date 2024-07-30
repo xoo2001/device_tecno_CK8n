@@ -8,6 +8,7 @@ allow hal_fingerprint_default sysfs_fp_name_path:dir r_dir_perms;
 allow hal_fingerprint_default sysfs_fp_name_path:file rw_file_perms;
 allow hal_fingerprint_default vendor_gf_data_file:dir create_dir_perms;
 allow hal_fingerprint_default vendor_gf_data_file:file create_file_perms;
+allow hal_fingerprint_default tranlog_device:chr_file rw_file_perms;
 
 add_service(hal_fingerprint_default, goodix_fingerprint_vndservice)
 binder_call(hal_fingerprint_default, goodix_fingerprint_vndservice)
@@ -16,3 +17,4 @@ allow hal_fingerprint_default goodix_fingerprint_vndservice:fd use;
 allow goodix_fingerprint_vndservice hal_fingerprint_default:fd use;
 
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
+set_prop(hal_fingerprint_default, vendor_mtk_default_prop)
