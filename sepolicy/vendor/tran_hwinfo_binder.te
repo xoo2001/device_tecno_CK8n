@@ -1,0 +1,7 @@
+type tran_hwinfo_binder, domain, halserverdomain, halclientdomain;
+type tran_hwinfo_binder_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(tran_hwinfo_binder)
+
+allow tran_hwinfo_binder tran_hwinfo_binder_hwservice:hwservice_manager { add find };
+allow tran_hwinfo_binder hidl_base_hwservice:hwservice_manager add;

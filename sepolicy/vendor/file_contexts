@@ -28,3 +28,6 @@
 
 # Tranfs
 /dev/block/sdc62                                                                        u:object_r:tranfs_block_device:s0
+
+# tranHwInfo
+/(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.tranHwInfo@(.*)-service u:object_r:tran_hwinfo_binder_exec:s0
