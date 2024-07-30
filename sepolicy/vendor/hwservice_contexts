@@ -11,6 +11,9 @@ vendor.mediatek.hardware.biometrics.fingerprint::ITranBiometricsFingerprint     
 # Google
 vendor.google.wireless_charger::IWirelessCharger                                    u:object_r:hal_wlc_hwservice:s0
 
+# tne
+vendor.transsion.hardware.tne.tneengine::ITne                                       u:object_r:hal_tnev_hwservice:s0
+
 # tranHwInfo
 vendor.mediatek.hardware.tranHwInfo::ITranHwInfo                                    u:object_r:tran_hwinfo_binder_hwservice:s0
 

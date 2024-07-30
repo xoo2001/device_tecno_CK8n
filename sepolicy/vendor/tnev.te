@@ -1,0 +1,9 @@
+type tnev, domain, halserverdomain;
+type tnev_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(tnev)
+
+allow tnev tneengine_tnek_file:chr_file { read write open };
+
+allow tnev hal_tnev_hwservice:hwservice_manager { find add };
+allow tnev hidl_base_hwservice:hwservice_manager add;

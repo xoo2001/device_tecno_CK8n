@@ -2,6 +2,9 @@
 type hal_trancamserver_hwservice, hwservice_manager_type;
 type hal_wlc_hwservice, hwservice_manager_type;
 
+# tne
+type hal_tnev_hwservice, hwservice_manager_type;
+
 # tranHwInfo
 type tran_hwinfo_binder_hwservice, hwservice_manager_type;
 

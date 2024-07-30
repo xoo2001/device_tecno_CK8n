@@ -2,6 +2,9 @@
 type cml421_ois_device, dev_type;
 type cwvi5300_device, dev_type;
 
+# tne
+type tneengine_tnek_file, dev_type, mlstrustedobject;
+
 # Tranfs
 type tranfs_block_device, dev_type;
 
