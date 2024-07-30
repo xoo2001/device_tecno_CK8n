@@ -2,3 +2,14 @@ type chg_sence, domain;
 type chg_sence_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(chg_sence)
+
+allow chg_sence self:netlink_kobject_uevent_socket { read create bind getopt setopt };
+allow chg_sence proc_bootconfig:file r_file_perms;
+allow chg_sence sysfs_dt_firmware_android:dir search;
+allow chg_sence sysfs_dt_firmware_android:file { read open getattr };
+allow chg_sence metadata_file:dir search;
+allow chg_sence gsi_metadata_file:dir search;
+allow chg_sence mnt_vendor_file:dir search;
+allow chg_sence nvdata_file:dir create_dir_perms;
+allow chg_sence nvdata_file:file create_file_perms;
+allow chg_sence sysfs_bat_cycle:file { read write getattr open };

@@ -1,3 +1,6 @@
+# Battery
+type sysfs_bat_cycle, fs_type, sysfs_type;
+
 # Camera
 type sysfs_tran_cam_file, fs_type, sysfs_type;
 type transsion_camera_data_file, file_type, data_file_type, mlstrustedobject;

@@ -6,6 +6,7 @@
 
 # Charger
 /(vendor|system/vendor)/bin/chg_sence                                                   u:object_r:chg_sence_exec:s0
+/sys/devices/platform/charger/tran_battery_cycle                                        u:object_r:sysfs_bat_cycle:s0
 
 # Data
 /data/storage_dbg(/.*)?                                                                 u:object_r:storage_dbg_data_file:s0
