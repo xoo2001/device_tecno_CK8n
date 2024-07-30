@@ -23,3 +23,6 @@ type sysfs_OTG_STATE_file, fs_type, sysfs_type;
 # Torch
 type sysfs_sub_torch_file, fs_type, sysfs_type;
 type sysfs_torch_file, fs_type, sysfs_type;
+
+# tran_auto_test
+type sysfs_tran_auto_test, fs_type, sysfs_type, mlstrustedobject;

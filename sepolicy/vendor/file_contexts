@@ -19,6 +19,9 @@
 /sys/kernel/tran_fp(/.*)?                                                                       u:object_r:sysfs_fp_name_path:s0
 /data/vendor/goodix/gf_data(/.*)?                                                               u:object_r:vendor_gf_data_file:s0
 
+# tran_auto_test
+/sys/devices/platform/odm/odm:tran_auto_test/power_supply/tran-auto-test(/.*)                   u:object_r:sysfs_tran_auto_test:s0
+
 # Trancam
 /(system\/vendor|vendor)/bin/hw/vendor.transsion.hardware.trancam.trancamserver@1.0-service     u:object_r:trancamserver_exec:s0
 /sys/devices/platform/(odm/odm:tran_battery|tran_battery)/tran_cam                              u:object_r:sysfs_tran_cam_file:s0
