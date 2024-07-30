@@ -45,3 +45,6 @@
 /dev/tranlog_ctl                                                                                u:object_r:tranlog_device:s0
 /dev/tranlog_user                                                                               u:object_r:tranlog_device_user:s0
 /(system\/vendor|vendor)/bin/tranlogconfig                                                      u:object_r:tranlogconfig_exec:s0
+
+# Vibrator
+/sys/devices/platform/soc/11d03000.i2c/i2c-7/7-0058/leds/vibrator_single(/.*)?                  u:object_r:sysfs_vibrator:s0
