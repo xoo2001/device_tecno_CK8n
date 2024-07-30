@@ -1,0 +1,11 @@
+type tranlog, domain, halserverdomain;
+type tranlog_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(tranlog)
+
+allow tranlog tranlog_device:chr_file { read write open };
+allow tranlog tranlog_device_user:chr_file { read write open };
+
+allow tranlog hal_tranlogconfig_hwservice:hwservice_manager find;
+allow tranlog hal_tranlog_hwservice:hwservice_manager { find add };
+allow tranlog hidl_base_hwservice:hwservice_manager add;

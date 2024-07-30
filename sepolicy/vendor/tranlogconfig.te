@@ -1,0 +1,7 @@
+type tranlogconfig, domain, halserverdomain;
+type tranlogconfig_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(tranlogconfig)
+
+allow tranlogconfig hal_tranlogconfig_hwservice:hwservice_manager { find add };
+allow tranlogconfig hidl_base_hwservice:hwservice_manager add;

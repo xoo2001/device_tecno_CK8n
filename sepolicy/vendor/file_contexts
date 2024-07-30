@@ -31,3 +31,10 @@
 
 # tranHwInfo
 /(system\/vendor|vendor)/bin/hw/vendor\.mediatek\.hardware\.tranHwInfo@(.*)-service u:object_r:tran_hwinfo_binder_exec:s0
+
+# Tranlog
+/(system\/vendor|vendor)/bin/tranlog                                                            u:object_r:tranlog_exec:s0
+/dev/tranlog_kernel                                                                             u:object_r:tranlog_device:s0
+/dev/tranlog_ctl                                                                                u:object_r:tranlog_device:s0
+/dev/tranlog_user                                                                               u:object_r:tranlog_device_user:s0
+/(system\/vendor|vendor)/bin/tranlogconfig                                                      u:object_r:tranlogconfig_exec:s0

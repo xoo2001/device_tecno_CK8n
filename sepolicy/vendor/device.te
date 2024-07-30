@@ -4,3 +4,7 @@ type cwvi5300_device, dev_type;
 
 # Tranfs
 type tranfs_block_device, dev_type;
+
+# Tranlog
+type tranlog_device, dev_type, mlstrustedobject;
+type tranlog_device_user, dev_type, mlstrustedobject;

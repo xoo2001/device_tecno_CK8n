@@ -14,5 +14,9 @@ vendor.google.wireless_charger::IWirelessCharger                                
 # tranHwInfo
 vendor.mediatek.hardware.tranHwInfo::ITranHwInfo                                    u:object_r:tran_hwinfo_binder_hwservice:s0
 
+# tranlog
+vendor.transsion.hardware.tranlogconfig::ITranLogConfig                             u:object_r:hal_tranlogconfig_hwservice:s0
+vendor.transsion.hardware.tranlog::ITranLog                                         u:object_r:hal_tranlog_hwservice:s0
+
 # Wi-Fi
 vendor.transsion.hardware.wifi.hostapd::IHostapd                                    u:object_r:hal_wifi_hostapd_hwservice:s0

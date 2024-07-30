@@ -4,3 +4,7 @@ type hal_wlc_hwservice, hwservice_manager_type;
 
 # tranHwInfo
 type tran_hwinfo_binder_hwservice, hwservice_manager_type;
+
+# tranlog
+type hal_tranlogconfig_hwservice, hwservice_manager_type;
+type hal_tranlog_hwservice, hwservice_manager_type;
