@@ -1,1 +1,2 @@
 dontaudit vendor_init system_mtk_fd_prop:property_service set;
+set_prop(vendor_init, transsion_vendor_prop)

@@ -1,1 +1,3 @@
 allow mtk_hal_pq ion_device:chr_file rw_file_perms;
+
+get_prop(mtk_hal_pq, transsion_vendor_prop)

@@ -13,5 +13,10 @@ ro.logsystem.usertype                       u:object_r:build_prop:s0
 # SVN
 ro.product.svn                              u:object_r:build_prop:s0
 
+# Transsion
+ro.vendor.tran.                             u:object_r:transsion_vendor_prop:s0
+ro.limit_cache.support                      u:object_r:transsion_vendor_prop:s0
+ro.cur_max_process.val                      u:object_r:transsion_vendor_prop:s0
+
 # Vendor aware available
 ro.vendor.aware_available                   u:object_r:vendor_aware_available_prop:s0
