@@ -450,6 +450,9 @@ PRODUCT_PACKAGES += \
     libunwindstack.vendor \
     libutilscallstack.vendor
 
+PRODUCT_PACKAGES += \
+    libui_shim
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
