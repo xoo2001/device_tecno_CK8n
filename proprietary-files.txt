@@ -2860,7 +2860,7 @@ system_ext/lib64/libvcodec_capenc.so
 system_ext/lib64/libvt_avsync.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
-system_ext/priv-app/ImsService/ImsService.apk|e7135c06b8f973bfcc325e970229d6e59b45dc84
+system_ext/priv-app/ImsService/ImsService.apk|dad0263d1ec8fd6ea1626cc61d5d7d64f4f90089
 
 # Secure element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
