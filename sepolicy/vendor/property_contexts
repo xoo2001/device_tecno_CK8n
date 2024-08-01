@@ -38,6 +38,9 @@ ro.vendor.dp.bypass.mdp                     u:object_r:vendor_mtk_mdp_prop:s0
 vendor.dp.rdma.workaround.enable            u:object_r:vendor_mtk_mdp_prop:s0
 vendor.dp.reduceconfig.disable              u:object_r:vendor_mtk_mdp_prop:s0
 
+# OMX
+mtk.vendor.omx.core.log                     u:object_r:vendor_mtk_omx_core_prop:s0
+
 # TEE
 vendor.tee.googlekey.status                 u:object_r:vendor_mtk_trustonic_tee_prop:s0
 
