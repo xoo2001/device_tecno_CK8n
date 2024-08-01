@@ -1,1 +1,3 @@
+binder_call(em_app, mtk_hal_nvramagent)
+
 dontaudit em_app mtk_hal_nvramagent_hwservice:hwservice_manager find;
