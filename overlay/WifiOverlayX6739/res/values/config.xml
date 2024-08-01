@@ -55,18 +55,6 @@
            be checked via NL80211 interface -->
     <bool name="config_wifi11axSupportOverride">true</bool>
 
-    <!-- Enable concurrent peer to peer + internet connectivity
-         Note: this is conditional on the device supporting dual concurrent STAs. -->
-    <bool name="config_wifiMultiStaLocalOnlyConcurrencyEnabled">true</bool>
-
-    <!-- Enable Make-Before-Break Wifi network switching.
-         Note: this is conditional on the device supporting dual concurrent STAs. -->
-    <bool name="config_wifiMultiStaNetworkSwitchingMakeBeforeBreakEnabled">true</bool>
-
-    <!-- Enable concurrent restricted connectivity + internet connectivity
-         Note: this is conditional on the device supporting dual concurrent STAs. -->
-    <bool name="config_wifiMultiStaRestrictedConcurrencyEnabled">true</bool>
-
     <!-- Indicates that SAE Hash-to-Element is supported on this device -->
     <bool name="config_wifiSaeH2eSupported">true</bool>
 
