@@ -195,3 +195,6 @@
 /dev/elliptic0            0644   system     system
 /dev/elliptic1            0644   system     system
 #BSP:modify ultrasound support ADYLHBSLA-4 by jianbin.zhu 20230506 end
+
+# Raw HID devices
+/dev/hidraw*              0660   system     system

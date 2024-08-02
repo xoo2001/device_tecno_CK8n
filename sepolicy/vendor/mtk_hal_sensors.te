@@ -8,3 +8,10 @@ allow mtk_hal_sensors nvram_device:blk_file { read write open };
 allow mtk_hal_sensors proc_bootconfig:file r_file_perms;
 
 get_prop(mtk_hal_sensors, transsion_vendor_prop)
+
+# Allow access for dynamic sensor properties.
+get_prop(mtk_hal_sensors, vendor_dynamic_sensor_prop)
+
+# Allow access to raw HID devices for dynamic sensors.
+allow mtk_hal_sensors device:dir r_dir_perms;
+allow mtk_hal_sensors hidraw_device:chr_file rw_file_perms;
