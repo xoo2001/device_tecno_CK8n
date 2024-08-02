@@ -46,3 +46,4 @@ vendor.tee.googlekey.status                 u:object_r:vendor_mtk_trustonic_tee_
 
 # VT
 ro.vendor.vt.                               u:object_r:vendor_mtk_vendor_vt_prop:s0
+ro.vendor.vt_hevc_support                   u:object_r:vendor_mtk_default_prop:s0
