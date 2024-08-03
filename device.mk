@@ -258,6 +258,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayX6739 \
     FrameworksResOverlayX6739 \
+    SettingsProviderOverlayX6739 \
     SettingsOverlayX6739 \
     SystemUIOverlayX6739 \
     TelephonyOverlayX6739 \
