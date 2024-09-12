@@ -46,6 +46,14 @@ function lib_to_package_fixup() {
         lib_to_package_fixup_vendor_variants "$@"
 }
 
+function vendor_imports() {
+	cat <<EOF >>"$1"
+		"device/tecno/CK8n",
+		"hardware/mediatek",
+		"hardware/mediatek/libmtkperf_client"
+EOF
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 
