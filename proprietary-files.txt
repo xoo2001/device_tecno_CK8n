@@ -2215,9 +2215,9 @@ vendor/etc/virtual-spn-conf-by-imsi.xml
 # Radio (IMS)
 vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
-vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
-vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
 
 # Radio (MTK-IMS)
 system_ext/bin/vtservice
