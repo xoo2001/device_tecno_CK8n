@@ -24,10 +24,5 @@ PRODUCT_MODEL := Infinix X6739
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=Infinix-X6739 \
-    PRODUCT_NAME=X6739-GL
-
-BUILD_FINGERPRINT := Infinix/X6739-GL/Infinix-X6739:12/SP1A.210812.016/241017V674:user/release-keys
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+    DeviceName=X6739 \
+    BuildFingerprint=Infinix/X6739-GL/Infinix-X6739:12/SP1A.210812.016/241017V722:user/release-keys
