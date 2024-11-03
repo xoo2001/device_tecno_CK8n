@@ -89,6 +89,9 @@ function blob_fixup() {
         vendor/lib64/hw/audio.primary.mt6893.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v31.so" "${2}"
             ;;
+        vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml)
+            sed -i 's/1.1/1.2/' "$2"
+            ;;
     esac
 }
 
