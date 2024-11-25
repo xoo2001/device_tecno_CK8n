@@ -296,6 +296,15 @@
             <Limit name="bitrate" range="1-120000000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
+        <MediaCodec name="c2.android.av1-dav1d.decoder" type="video/av01" update="true">
+            <Limit name="size" min="2x2" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="block-count" range="1-8160" /><!-- max 1920x1088 -->
+            <Limit name="blocks-per-second" range="1-244800" />
+            <Limit name="bitrate" range="1-40000000" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
         <MediaCodec name="c2.android.mpeg2.decoder" type="video/mpeg2" domain="tv" update="true">
             <Alias name="OMX.google.mpeg2.decoder" />
             <!-- profiles and levels:  ProfileMain : LevelHL -->
@@ -391,7 +400,9 @@
             <Limit name="concurrent-instances" max="10" />
             <Limit name="performance-point-1920x1088" value="30" />
             <Feature name="special-codec" required="true" />
-            <Feature name="bitrate-modes" value="VBR,CBR,CQ" />
+            <!-- modify CK8NGLUAEE-173 add mtk patch by juanjuan.he 20240718 start -->
+            <!--<Feature name="bitrate-modes" value="VBR,CBR,CQ" />-->
+            <!-- modify CK8NGLUAEE-173 add mtk patch by juanjuan.he 20240718 end -->
         </MediaCodec>
         <MediaCodec name="c2.mtk.hevc.encoder" type="video/hevc" >
             <Alias name="OMX.MTK.VIDEO.ENCODER.HEVC" />

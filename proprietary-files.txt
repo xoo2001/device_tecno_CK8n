@@ -1,4 +1,4 @@
-# Unpinned blobs from from sys_tssi_64_armv82_infinix-user 14 UP1A.231005.007 650998 release-keys
+# All blobs from sys_tssi_64_armv82_infinix-user 14 UP1A.231005.007 722992 release-keys
 
 # AEE
 vendor/lib/libaedv.so
@@ -1563,7 +1563,6 @@ vendor/data/camera/model/meishefilter/landiao.mslut
 vendor/data/camera/model/meishefilter/saibo.mslut
 vendor/data/camera/model/meishefilter/youhua.mslut
 vendor/data/camera/model/M_Segment_DoubleLoss_V1.model
-vendor/data/camera/model/Transsion_20240415_2_nosoft.dla
 vendor/data/camera/model/animal_human_landmark_fp16.mnn
 vendor/data/camera/model/capture_sky.mnn
 vendor/data/camera/model/eyes_detect_model
