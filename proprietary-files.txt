@@ -2394,12 +2394,8 @@ vendor/lib64/vendor.trustonic.tee@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.1.so
 
 # Vibrator
-vendor/bin/hw/android.hardware.vibrator-service.mediatek
-vendor/etc/init/vibrator-mtk-default.rc
 vendor/lib/libvibrator.so
-vendor/lib64/libaacvibrator.so
 vendor/lib64/libvibrator.so
-vendor/lib64/vendor.aac.hardware.richtap.vibrator-V1-ndk_platform.so
 
 # Wi-Fi
 vendor/bin/hw/tetheroffloadservice

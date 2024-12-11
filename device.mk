@@ -413,7 +413,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/mediatek
+    hardware/mediatek \
+    hardware/transsion
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -435,7 +436,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-V2-ndk.vendor
+    android.hardware.vibrator-service.transsion
 
 # Required for QPR3
 PRODUCT_PACKAGES += \

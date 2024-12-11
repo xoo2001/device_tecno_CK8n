@@ -51,3 +51,4 @@
 
 # Vibrator
 /sys/devices/platform/soc/11d03000.i2c/i2c-7/7-0058/leds/vibrator_single(/.*)?                  u:object_r:sysfs_vibrator:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service\.transsion           u:object_r:hal_vibrator_default_exec:s0
