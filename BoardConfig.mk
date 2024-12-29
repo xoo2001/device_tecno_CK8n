@@ -70,7 +70,7 @@ BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += pm.sleep_mode=1
 
 # Display
-TARGET_SCREEN_DENSITY := 480
+TARGET_SCREEN_DENSITY := 396
 
 # Kernel
 TARGET_NO_KERNEL_OVERRIDE := true
