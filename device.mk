@@ -67,7 +67,6 @@ PRODUCT_PACKAGES += \
     audio_policy.stub
 
 PRODUCT_PACKAGES += \
-    libalsautils \
     libaudiofoundation.vendor \
     libaudioroute.vendor \
     libdynproc \
