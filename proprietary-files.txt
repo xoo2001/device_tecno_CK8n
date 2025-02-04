@@ -218,33 +218,6 @@ vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 vendor/etc/audio_param/Volume_AudioParam.xml
 vendor/etc/audio_param/Volume_ParamUnitDesc.xml
 
-# Audio DTS
-vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_44.bin
-vendor/etc/dts/acc/d30de3a0-b177-4822-9c15-816b79545f82_usb_48.bin
-vendor/etc/dts/beq44
-vendor/etc/dts/beq48
-vendor/etc/dts/ctc
-vendor/etc/dts/current_bluetooth44k
-vendor/etc/dts/current_bluetooth48k
-vendor/etc/dts/current_lineout48k
-vendor/etc/dts/current_speaker48k
-vendor/etc/dts/current_usb44k
-vendor/etc/dts/current_usb48k
-vendor/etc/dts/customer.cfg
-vendor/etc/dts/dts-eagle.lic
-vendor/etc/dts/dts_audio_settings
-vendor/etc/dts/games_accessory44
-vendor/etc/dts/games_accessory48
-vendor/etc/dts/games_speaker48
-vendor/etc/dts/movie_accessory44
-vendor/etc/dts/movie_accessory48
-vendor/etc/dts/movie_speaker48
-vendor/etc/dts/music_accessory44
-vendor/etc/dts/music_accessory48
-vendor/etc/dts/music_speaker48
-vendor/etc/dts/off_speaker48
-vendor/etc/init/dts.rc
-
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/bin/autobt
