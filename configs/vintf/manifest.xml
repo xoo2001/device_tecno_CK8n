@@ -184,11 +184,6 @@
         <fqname>@1.2::IDmcService/dmc_hidl_service</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.mediatek.hardware.engineermode</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.3::IEmd/EmHidlServer</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.mediatek.hardware.keymaster_attestation</name>
         <transport>hwbinder</transport>
         <fqname>@1.1::IKeymasterDevice/default</fqname>
