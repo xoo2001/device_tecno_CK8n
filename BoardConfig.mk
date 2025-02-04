@@ -39,6 +39,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
 
 # Bootloader
 BOARD_VENDOR := infinix

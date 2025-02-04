@@ -143,6 +143,9 @@ PRODUCT_PACKAGES += \
     libui.vendor \
     libvulkan
 
+# Dolby
+$(call inherit-product, vendor/sony/dolby/setup.mk)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey \
