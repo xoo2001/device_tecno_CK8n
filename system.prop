@@ -19,6 +19,10 @@ persist.vendor.anr.dumpthr=1
 # Bluetooth
 bluetooth.profile.asha.central.enabled=true
 
+# Blur
+ro.surface_flinger.supports_background_blur=1
+ro.sf.blurs_are_expensive=1
+
 # Brand
 Build.BRAND=MTK
 
@@ -115,6 +119,7 @@ ro.zram.periodic_wb_delay_hours=24
 
 # Zygote
 ro.zygote.preload.enable=0
+zygote.critical_window.minute=10
 
 # Zygisk Preforking
 persist.device_config.runtime_native.usap_pool_enabled=true
