@@ -136,6 +136,9 @@ ro.netflix.bsp_rev=MTK6893-32816-1
 ro.vendor.mtk_widevine_drm_l1_support=1
 ro.vendor.mtk_sec_video_path_support=1
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
 # Data
 persist.vendor.factory.GB2312=no
 persist.vendor.swapfile_enable=true
