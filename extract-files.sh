@@ -127,6 +127,17 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i 's/libfingerprint.default.so/gf_fingerprint.default.so/' "$2"
             ;;
+        vendor/lib64/lib3a.ae.stat.so |\
+        vendor/lib64/lib3a.flash.so |\
+        vendor/lib64/lib3a.sensors.color.so |\
+        vendor/lib64/lib3a.sensors.flicker.so)
+            [ "$2" = "" ] && return 0
+            grep -q "liblog.so" "${2}" || "$PATCHELF" --add-needed "liblog.so" "${2}"
+            ;;
+        vendor/lib64/mt6893/libmnl.so)
+            [ "$2" = "" ] && return 0
+            grep -q "libcutils.so" "${2}" || "$PATCHELF" --add-needed "libcutils.so" "${2}"
+            ;;
         *)
             return 1
             ;;
