@@ -157,10 +157,6 @@ PRODUCT_PACKAGES += \
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Engineermode
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/system-ext-permissions-com.mediatek.engineermode.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/system-ext-permissions-com.mediatek.engineermode.xml
-
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
