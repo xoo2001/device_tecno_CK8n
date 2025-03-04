@@ -31,6 +31,7 @@ persist.vendor.sys.fp.dump_data             u:object_r:vendor_fingerprint_prop:s
 vendor.fp.center.X.offset                   u:object_r:vendor_fingerprint_prop:s0
 vendor.fp.center.Y.offset                   u:object_r:vendor_fingerprint_prop:s0
 ro.vendor.tran.fp.support                   u:object_r:vendor_mtk_default_prop:s0
+persist.vendor.sys.fp.vendor                u:object_r:vendor_fingerprint_prop:s0
 
 # HWC
 vendor.display.vds_allow_hwc                u:object_r:vendor_hwc_prop:s0

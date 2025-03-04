@@ -18,3 +18,5 @@ allow goodix_fingerprint_vndservice hal_fingerprint_default:fd use;
 
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
 set_prop(hal_fingerprint_default, vendor_mtk_default_prop)
+
+rw_dir_file(hal_fingerprint_default, vendor_proc_fingerprint)

@@ -12,6 +12,7 @@ type storage_dbg_data_file, file_type, core_data_file_type, data_file_type;
 # Fingerprint
 type sysfs_fp_name_path, fs_type, sysfs_type;
 type vendor_gf_data_file, file_type, data_file_type;
+type vendor_proc_fingerprint, fs_type, proc_type, sysfs_type;
 
 # Gesture
 type proc_gesture_function, fs_type, proc_type, sysfs_type;
