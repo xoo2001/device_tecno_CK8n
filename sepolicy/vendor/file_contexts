@@ -22,10 +22,6 @@
 # kmsetkey
 /(vendor|system\/vendor)/bin/kmsetkey_ca.trustonic                                              u:object_r:trustonic_kmsetkey_ca_exec:s0
 
-# Power
-# Power
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.lineage-libperfmgr u:object_r:hal_power_default_exec:s0
-
 # Raw HID device
 /dev/hidraw[0-9]*                                                                               u:object_r:hidraw_device:s0
 
@@ -55,4 +51,3 @@
 
 # Vibrator
 /sys/devices/platform/soc/11d03000.i2c/i2c-7/7-0058/leds/vibrator_single(/.*)?                  u:object_r:sysfs_vibrator:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service\.transsion           u:object_r:hal_vibrator_default_exec:s0

@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    name: "TetheringConfigOverlayX6739",
+    name: "TetheringConfigOverlayCK8n",
     theme: "TetheringConfigOverlay",
     sdk_version: "current",
     product_specific: true

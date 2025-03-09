@@ -19,7 +19,8 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     vbmeta_system \
     vbmeta_vendor \
-    vendor
+    vendor \
+    vendor_boot
 
 # Architecture
 TARGET_ARCH := arm64
@@ -40,7 +41,7 @@ AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
 
 # Bootloader
 BOARD_VENDOR := infinix
-TARGET_BOOTLOADER_BOARD_NAME := Infinix-X6739
+TARGET_BOOTLOADER_BOARD_NAME := Tecno-CK8n
 TARGET_NO_BOOTLOADER := true
 
 # Boot Image
@@ -81,18 +82,17 @@ BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 
 # Kernel modules
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.vendor_ramdisk))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules-vendor_ramdisk/modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules-vendor_ramdisk/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
 
 # Also add recovery modules to vendor ramdisk
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.recovery))
-RECOVERY_MODULES := $(addprefix $(KERNEL_PATH)/modules/, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules-vendor_ramdisk/modules.load.recovery))
+RECOVERY_MODULES := $(addprefix $(KERNEL_PATH)/modules-vendor_ramdisk//, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
 
 # Prevent duplicated entries (to solve duplicated build rules problem)
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
 
-# Vendor modules
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/modules.load))
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/*.ko)
 
 # Partitions
@@ -102,10 +102,10 @@ BOARD_DTBOIMG_PARTITION_SIZE := 8388608            # 8192      * 1024 (sdc39)
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
 
 # Partitions - Dynamic
-BOARD_SUPER_PARTITION_SIZE := 11378286592
-BOARD_SUPER_PARTITION_GROUPS := infinix_dynamic_partitions
-BOARD_INFINIX_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
-BOARD_INFINIX_DYNAMIC_PARTITIONS_SIZE := 11377238016
+BOARD_SUPER_PARTITION_SIZE := 11661934592
+BOARD_SUPER_PARTITION_GROUPS := tecno_dynamic_partitions
+BOARD_TECNO_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
+BOARD_TECNO_DYNAMIC_PARTITIONS_SIZE := 11657740288
 
 # Make GApps installation possible
 ifneq ($(WITH_GMS),true)
@@ -228,4 +228,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WIFI_FEATURE_HOSTAPD_11AX := true
 
 # Inherit the proprietary files
-include vendor/infinix/X6739/BoardConfigVendor.mk
+include vendor/tecno/CK8n/BoardConfigVendor.mk

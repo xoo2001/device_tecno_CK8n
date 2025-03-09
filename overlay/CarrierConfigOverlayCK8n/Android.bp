@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    name: "CarrierConfigOverlayX6739",
+    name: "CarrierConfigOverlayCK8n",
     theme: "CarrierConfigOverlay",
     certificate: "platform",
     sdk_version: "current",

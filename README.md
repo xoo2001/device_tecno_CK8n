@@ -1,4 +1,4 @@
-# Device tree for INFINIX GT 10 PRO 5G
+# Device tree for Tecno Camon 20 Pro 5G
 
 ```
 #

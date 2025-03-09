@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    name: "WifiOverlayX6739",
+    name: "WifiOverlayCK8n",
     theme: "WifiOverlay",
     sdk_version: "current",
     product_specific: true

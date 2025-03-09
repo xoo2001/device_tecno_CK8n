@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/X6739
+DEVICE_PATH := device/tecno/CK8n
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 # Allow userspace reboots
@@ -268,14 +268,14 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlayX6739 \
-    FrameworksResOverlayX6739 \
-    SettingsProviderOverlayX6739 \
-    SettingsOverlayX6739 \
-    SystemUIOverlayX6739 \
-    TelephonyOverlayX6739 \
-    TetheringConfigOverlayX6739 \
-    WifiOverlayX6739
+    CarrierConfigOverlayCK8n \
+    FrameworksResOverlayCK8n \
+    SettingsProviderOverlayCK8n \
+    SettingsOverlayCK8n \
+    SystemUIOverlayCK8n \
+    TelephonyOverlayCK8n \
+    TetheringConfigOverlayCK8n \
+    WifiOverlayCK8n
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -417,7 +417,8 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@1.0.vendor \
     android.hardware.sensors@2.0.vendor \
-    android.hardware.sensors@2.0-ScopedWakelock.vendor
+    android.hardware.sensors@2.0-ScopedWakelock.vendor \
+    libsensorndkbridge
 
 PRODUCT_PACKAGES += \
     libpower.vendor
@@ -438,8 +439,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libmtkperf_client \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/mediatek \
-    hardware/transsion
+    hardware/mediatek
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -461,7 +461,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.transsion
+    android.hardware.vibrator-service.mediatek
 
 # Required for QPR3
 PRODUCT_PACKAGES += \
@@ -502,4 +502,4 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/infinix/X6739/X6739-vendor.mk)
+$(call inherit-product, vendor/tecno/CK8n/CK8n-vendor.mk)

@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=X6739
-VENDOR=infinix
+DEVICE=CK8n
+VENDOR=tecno
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -73,6 +73,13 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v31.so" "${2}"
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v31.so" "${2}"
             ;;
+        vendor/bin/mnld)
+             ;&
+         vendor/lib64/libaalservice.so)
+             ;&
+         vendor/lib64/libcam.utils.sensorprovider.so)
+             "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "libsensorndkbridge-v31.so" "${2}"
+             ;;
         vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so)
             grep -q libshim_camera_metadata.so "$2" || "$PATCHELF" --add-needed libshim_camera_metadata.so "$2"
             ;;

@@ -9,20 +9,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from device makefile.
-$(call inherit-product, device/infinix/X6739/device.mk)
+$(call inherit-product, device/tecno/CK8n/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 TARGET_DISABLE_EPPE := true
-PRODUCT_NAME := lineage_X6739
-PRODUCT_DEVICE := X6739
-PRODUCT_MANUFACTURER := INFINIX
-PRODUCT_BRAND := Infinix
-PRODUCT_MODEL := Infinix X6739
+PRODUCT_NAME := lineage_CK8n
+PRODUCT_DEVICE := CK8n
+PRODUCT_MANUFACTURER := TECNO
+PRODUCT_BRAND := Tecno
+PRODUCT_MODEL := Tecno CK8n
 
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceName=X6739 \
-    BuildFingerprint=Infinix/X6739-GL/Infinix-X6739:12/SP1A.210812.016/241017V722:user/release-keys
+    DeviceName=CK8n \
+    BuildFingerprint=TECNO/CK8n-GL/TECNO-CK8n:14/UP1A.231005.007/241029V472:user/release-keys
