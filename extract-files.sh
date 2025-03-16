@@ -104,6 +104,7 @@ function blob_fixup() {
          vendor/lib64/libcam.utils.sensorprovider.so)
             [ "$2" = "" ] && return 0
              "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "libsensorndkbridge-v31.so" "${2}"
+            grep -q "android.hardware.sensors@1.0-convert-shared.so" "$2" || "$PATCHELF" --add-needed "android.hardware.sensors@1.0-convert-shared.so" "$2"
              ;;
         vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so)
             [ "$2" = "" ] && return 0
