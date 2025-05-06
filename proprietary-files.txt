@@ -29,14 +29,14 @@ vendor/bin/audiocmdservice_atci
 vendor/etc/init/audiocmdservice_atci.rc
 vendor/lib/hw/audio.primary.mt6893.so
 vendor/lib/hw/audio.r_submix.mt6893.so
-vendor/lib/hw/awinic.audio.effect.so
+vendor/lib/hw/awinic.audio.effect.so;FIX_SONAME
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib/audio_common-aidl-cpp.so
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/libTransNS.so
 vendor/lib/lib_iir.so
 vendor/lib/lib_speech_enh.so
-vendor/lib/libalsautils.so:vendor/lib/libalsautils-v31.so
+vendor/lib/libalsautils.so:vendor/lib/libalsautils-v31.so;FIX_SONAME
 vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libaudiocompensationfilter_vendor.so
 vendor/lib/libaudiocompensationfilterc.so
@@ -59,7 +59,7 @@ vendor/lib/libmsbc_mtk.so
 vendor/lib/libmtklimiter_vendor.so
 vendor/lib/libmtkshifter_vendor.so
 vendor/lib/librt_extamp_intf.so
-vendor/lib/libspeech_enh_lib.so
+vendor/lib/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib/libspeechparser_vendor.so
 vendor/lib/libvow_ap_test_aa.so
 vendor/lib/libvow_ap_test_dd.so
@@ -76,7 +76,7 @@ vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/libTransNS.so
 vendor/lib64/lib_iir.so
 vendor/lib64/lib_speech_enh.so
-vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v31.so
+vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v31.so;FIX_SONAME
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocompensationfilterc.so
@@ -99,7 +99,7 @@ vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkshifter_vendor.so
 vendor/lib64/librt_extamp_intf.so
-vendor/lib64/libspeech_enh_lib.so
+vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libvow_ap_test_aa.so
 vendor/lib64/libvow_ap_test_dd.so
@@ -1908,7 +1908,7 @@ vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc
 vendor/etc/init/vendor.goodix.rc
 vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service-mediatek.xml
 vendor/lib/libMcClient.so
-vendor/lib64/hw/gf_fingerprint.default.so
+vendor/lib64/hw/gf_fingerprint.default.so;FIX_SONAME
 vendor/lib64/libMcClient.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
@@ -2716,7 +2716,7 @@ vendor/lib/libcmdl_ndk.mtk.vndk.so
 vendor/lib/libneuroeara.so
 vendor/lib/libneuron_graph_delegate.mtk.so
 vendor/lib/libneuropilot_hal_utils.so
-vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so
+vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib/libtflite_mtk.so
 vendor/lib64/mt6893/libneuron_platform.vpu.so;SYMLINK=vendor/lib64/libneuron_platform.vpu.so
 vendor/lib64/mt6893/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
@@ -2731,7 +2731,7 @@ vendor/lib64/libneuron_graph_delegate.mtk.so
 vendor/lib64/libneuron_platform.so
 vendor/lib64/libneuron_wrapper.so
 vendor/lib64/libneuropilot_hal_utils.so
-vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib64/libtflite_mtk.so
 
 # NFC
@@ -3019,7 +3019,7 @@ vendor/etc/init/tetheroffloadservice.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/lib/meta_wifi_data.so
 vendor/lib/vendor.mediatek.hardware.netdagent@1.0.so
-vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 vendor/lib64/libwifitest.so
 vendor/lib64/meta_wifi_data.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
