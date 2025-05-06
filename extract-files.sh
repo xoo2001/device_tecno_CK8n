@@ -62,6 +62,10 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        system_ext/lib64/libimsma.so)
+            [ "$2" = "" ] && return 0
+            "$PATCHELF" --replace-needed "libsink.so" "libsink-mtk.so" "${2}"
+            ;;
         system_ext/lib64/libsource.so)
             [ "$2" = "" ] && return 0
             grep -q libui_shim.so "$2" || "$PATCHELF" --add-needed libui_shim.so "$2"
