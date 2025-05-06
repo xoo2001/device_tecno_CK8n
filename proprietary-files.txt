@@ -2717,7 +2717,7 @@ vendor/lib/libneuroeara.so
 vendor/lib/libneuron_graph_delegate.mtk.so
 vendor/lib/libneuropilot_hal_utils.so
 vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
-vendor/lib/libtflite_mtk.so
+vendor/lib/libtflite_mtk.so;DISABLE_DEPS
 vendor/lib64/mt6893/libneuron_platform.vpu.so;SYMLINK=vendor/lib64/libneuron_platform.vpu.so
 vendor/lib64/mt6893/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
 vendor/lib64/mt6893/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
@@ -2732,7 +2732,7 @@ vendor/lib64/libneuron_platform.so
 vendor/lib64/libneuron_wrapper.so
 vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
-vendor/lib64/libtflite_mtk.so
+vendor/lib64/libtflite_mtk.so;DISABLE_DEPS
 
 # NFC
 vendor/bin/hw/android.hardware.nfc@1.2-service-st
@@ -2808,7 +2808,7 @@ vendor/lib/librcs_interface.so
 vendor/lib/librcs_volte_core.so
 vendor/lib/libsimlock.so
 vendor/lib/libsimmelock.so
-vendor/lib/libsysenv.so
+vendor/lib/libsysenv.so;DISABLE_DEPS
 vendor/lib/libvt_custom.so
 vendor/lib/libwapi.so
 vendor/lib64/libcapctrl.so
@@ -2839,7 +2839,7 @@ vendor/lib64/librilfusion.so
 vendor/lib64/libsimlock.so
 vendor/lib64/libsimmelock.so
 vendor/lib64/libstorage_otp.so
-vendor/lib64/libsysenv.so
+vendor/lib64/libsysenv.so;DISABLE_DEPS
 vendor/lib64/libtrm.so
 vendor/lib64/libvia-ril.so
 vendor/lib64/libviamipc-ril.so
