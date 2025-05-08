@@ -6,3 +6,57 @@
 
 soong_namespace {
 }
+
+cc_prebuilt_library_shared {
+    name: "libbinder-v31",
+    vendor: true,
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["vndk/v31/arm/libbinder-v31.so"],
+        },
+        android_arm64: {
+            srcs: ["vndk/v31/arm64/libbinder-v31.so"],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "libhidlbase-v31",
+    vendor: true,
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["vndk/v31/arm/libhidlbase-v31.so"],
+        },
+        android_arm64: {
+            srcs: ["vndk/v31/arm64/libhidlbase-v31.so"],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "libutils-v31",
+    vendor: true,
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["vndk/v31/arm/libutils-v31.so"],
+        },
+        android_arm64: {
+            srcs: ["vndk/v31/arm64/libutils-v31.so"],
+        },
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+}
