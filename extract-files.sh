@@ -83,6 +83,14 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             "${PATCHELF}" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "${2}"
             ;;
+        vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron |\
+        vendor/bin/nfcstackp-vendor |\
+        vendor/lib*/libnvram.so |\
+        vendor/lib*/libsysenv.so |\
+        vendor/lib*/libtflite_mtk.so)
+            [ "$2" = "" ] && return 0
+            grep -q "libbase_shim.so" "$2" || "$PATCHELF" --add-needed "libbase_shim.so" "$2"
+            ;;
         vendor/bin/hw/camerahalserver)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v31.so" "${2}"
