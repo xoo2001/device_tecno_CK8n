@@ -133,10 +133,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Partitions - Metadata
 BOARD_USES_METADATA_PARTITION := true
 
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/proc/gesture_function"
-TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB := //$(DEVICE_PATH):libperfmgr-ext-transsion
-
 # Platform
 TARGET_BOARD_PLATFORM := mt6893
 BOARD_HAS_MTK_HARDWARE := true
