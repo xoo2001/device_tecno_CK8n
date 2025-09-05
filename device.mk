@@ -162,10 +162,10 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
+TARGET_HAS_UDFPS := true
+
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor:64 \
-    android.hardware.biometrics.fingerprint@2.2.vendor:64 \
-    android.hardware.biometrics.fingerprint@2.3.vendor:64
+    android.hardware.biometrics.fingerprint@2.1.vendor:64
 
 # Gatekeeper
 PRODUCT_PACKAGES += \

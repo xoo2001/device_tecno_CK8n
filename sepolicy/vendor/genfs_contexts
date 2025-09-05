@@ -18,9 +18,6 @@ genfscon sysfs /devices/platform/11270000.ufshci/host0/target0:0:0/0:0:0:2/block
 genfscon sysfs /devices/platform/extcon_usb                                                         u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/soc/14800000.dp_tx/extcon                                          u:object_r:sysfs_extcon:s0
 
-# Fingerprint
-genfscon proc /fingerprint_status u:object_r:vendor_proc_fingerprint:s0
-
 # Gesture
 genfscon proc /gesture_function                                                                     u:object_r:proc_gesture_function:s0
 genfscon proc /main_gesture_function                                                                u:object_r:proc_main_gesture_function:s0
