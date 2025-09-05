@@ -970,7 +970,7 @@ vendor/lib64/libcolorlevel.so
 vendor/lib64/libdenoise.so
 vendor/lib64/libdip_drv.so
 vendor/lib64/libdip_postproc.so
-vendor/lib64/libeffect_hal.so
+vendor/lib64/libeffect_hal.so;DISABLE_CHECKELF
 vendor/lib64/libeffecthal.base.so
 vendor/lib64/libeyedetector.so
 vendor/lib64/libfacesattribute.so
@@ -994,7 +994,7 @@ vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/liblpcnr.so
 vendor/lib64/libmagicsky_64.so
 vendor/lib64/libmfllcore.so
-vendor/lib64/libmorpho_video_stabilizer.so
+vendor/lib64/libmorpho_video_stabilizer.so;DISABLE_CHECKELF
 vendor/lib64/libmpbase.so
 vendor/lib64/libmsnr.so
 vendor/lib64/libmtkcam.atmseventmgr.so
@@ -1067,7 +1067,7 @@ vendor/lib64/liboissr.so
 vendor/lib64/libportrait_repair_ppl3_ocl.so
 vendor/lib64/librgbwlightsensor.so
 vendor/lib64/libsdk_sr.so
-vendor/lib64/libsegmention.so
+vendor/lib64/libsegmention.so;DISABLE_CHECKELF
 vendor/lib64/libsegmentionPre.so
 vendor/lib64/libsmartdetector.so
 vendor/lib64/libst_mobile.so
@@ -1081,7 +1081,7 @@ vendor/lib64/libtflite_native_seginference.so
 vendor/lib64/libtran_sensorhub_oismgr.so
 vendor/lib64/libtrancamJsonConvertor.so
 vendor/lib64/libtrancam_filelockmgr.so
-vendor/lib64/libtranssion_bodybeauty.so
+vendor/lib64/libtranssion_bodybeauty.so;DISABLE_CHECKELF
 vendor/lib64/libtranssion_cal.so
 vendor/lib64/libttm_rgbw_fusion.so
 vendor/lib64/libvideofilter_cl_64.so
@@ -2570,7 +2570,7 @@ vendor/lib/AVCSecureVdecCA_510.so
 vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA_510.so
 vendor/lib/libAVCSecureVencCA_510.so
-vendor/lib/libHEVCdec_sa.ca7.android.so
+vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_CHECKELF
 vendor/lib/libcodec2_mtk_c2store.so
 vendor/lib/libcodec2_mtk_vdec.so
 vendor/lib/libcodec2_mtk_venc.so
@@ -2586,19 +2586,19 @@ vendor/lib/libh264dec_customize.so
 vendor/lib/libh264dec_sa.ca7.so
 vendor/lib/libh264dec_sd.ca7.so
 vendor/lib/libh264dec_se.ca7.so
-vendor/lib/libh264enc_sa.ca7.so
-vendor/lib/libhevce_sb.ca7.android.so
+vendor/lib/libh264enc_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libhevce_sb.ca7.android.so;DISABLE_CHECKELF
 vendor/lib/libmp3dec_mtk.so
-vendor/lib/libmp4enc_sa.ca7.so
-vendor/lib/libmp4enc_xa.ca7.so
+vendor/lib/libmp4enc_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libmp4enc_xa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libstagefrighthw.so
-vendor/lib/libvcodec_oal.so
+vendor/lib/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib/libvcodec_utility_v3a.so
 vendor/lib/libvcodecdrv_header_stub.so
 vendor/lib/libvcodecdrv_v3a.so
-vendor/lib/libvp8dec_sa.ca7.so
-vendor/lib/libvp8enc_sa.ca7.so
-vendor/lib/libvp9dec_sa.ca7.so
+vendor/lib/libvp8dec_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libvp8enc_sa.ca7.so;DISABLE_CHECKELF
+vendor/lib/libvp9dec_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libvpu.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpudv3a_vcodec.so
@@ -2620,9 +2620,9 @@ vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
-vendor/lib64/libhevce_sb.ca7.android.so
+vendor/lib64/libhevce_sb.ca7.android.so;DISABLE_CHECKELF
 vendor/lib64/libstagefrighthw.so
-vendor/lib64/libvcodec_oal.so
+vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
@@ -2963,8 +2963,8 @@ vendor/lib64/hw/thermal_hal.so
 vendor/lib64/libmtcloader.so
 
 # THH
-vendor/lib/libthha.so
-vendor/lib64/libthha.so
+vendor/lib/libthha.so;DISABLE_CHECKELF
+vendor/lib64/libthha.so;DISABLE_CHECKELF
 vendor/thh/ta/93feffccd8ca11e796c7c7a21acb4932.ta
 vendor/thh/ta/d91f322ad5a441d5955110eda3272fc0.ta
 vendor/thh/ta/df1edda8627911e980ae507b9d9a7e7d.ta
