@@ -2632,7 +2632,7 @@ vendor/bin/hw/vendor.mediatek.hardware.tranHwInfo@1.0-service
 vendor/bin/fpsgo
 vendor/bin/gbe
 vendor/bin/md_monitor
-vendor/bin/meta_tst
+vendor/bin/meta_tst;DISABLE_DEPS
 vendor/bin/mt6660_calibration
 vendor/bin/rt5512_calibration
 vendor/bin/v3avpud
