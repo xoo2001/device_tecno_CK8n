@@ -2632,7 +2632,7 @@ vendor/bin/hw/vendor.mediatek.hardware.tranHwInfo@1.0-service
 vendor/bin/fpsgo
 vendor/bin/gbe
 vendor/bin/md_monitor
-vendor/bin/meta_tst
+vendor/bin/meta_tst;DISABLE_DEPS
 vendor/bin/mt6660_calibration
 vendor/bin/rt5512_calibration
 vendor/bin/v3avpud
@@ -3003,10 +3003,6 @@ vendor/lib64/libimsg_log.so
 vendor/lib64/vendor.trustonic.tee.tui@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.1.so
-
-# Vibrator
-vendor/lib/libvibrator.so
-vendor/lib64/libvibrator.so
 
 # Wi-Fi
 vendor/bin/hw/tetheroffloadservice

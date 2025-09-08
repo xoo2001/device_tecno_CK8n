@@ -71,6 +71,7 @@ PRODUCT_PACKAGES += \
     libaudioroute.vendor \
     libdynproc \
     libhapticgenerator \
+    libldacBT_bco \
     libprocessgroup.vendor
 
 PRODUCT_PACKAGES += \
@@ -95,11 +96,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     audio.bluetooth.default \
     libbluetooth_audio_session
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/libshims/libldacBT_bco:$(TARGET_COPY_OUT_VENDOR)/lib/libldacBT_bco.so \
-    $(LOCAL_PATH)/libshims/libldacBT_bco:$(TARGET_COPY_OUT_VENDOR)/lib64/libldacBT_bco.so
-
+    
     # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0.vendor \
@@ -478,10 +475,6 @@ PRODUCT_PACKAGES += \
     libbinder-v31 \
     libhidlbase-v31 \
     libutils-v31
-
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v33/arm64/arch-arm-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so \
-    prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so
 
 PRODUCT_PACKAGES += \
     libunwindstack.vendor \
